@@ -1,0 +1,26 @@
+<!-- How it works | How Durge Guide adds to Baldur's Gate 3 without Script Extender, for modders. | docs -->
+<h1>How it works</h1>
+<p>For modders. Everything here is an Osiris story goal plus data files, so it needs no Script Extender and can run on the native Linux build.</p>
+
+<h2>Popups and notices</h2>
+<p>An existing save never gains a mod's new level objects, so triggers placed in a level wouldn't fire. Instead, a timer checks the host's position once a second against a 16-metre grid of spots. Notes are <code>UnifiedTutorial</code> entries with the side-popup modal type, so they get the journal archive for free.</p>
+<ul>
+  <li>Two side popups can be on screen. A third call is dropped, but still counted as seen, so popups are spaced 6 seconds apart.</li>
+  <li>A popup raised under the loading screen is lost in the same way, so nothing fires until the party has moved.</li>
+  <li><code>ShowNotification</code> takes raw strings, which gives the one-line notices.</li>
+</ul>
+
+<h2>Text in the game's own screens</h2>
+<p>A mod's localization file with the same handle doesn't override the game's text. What does work is shipping a full copy of <code>english.loca</code> inside the mod's pak. The build extracts the current file from the installed game, adds the notes to quest steps, dialogue lines and item descriptions, and packs it. That's also why a tier has to be chosen at build time.</p>
+
+<h2>Map pins</h2>
+<p>Journal markers need an existing object, so each one snaps to a vanilla object nearby. They stay hidden until <code>ShowMapMarker</code> is called, and the shown state is saved, so a timer shows only those within 160 metres. Pins clear on <code>TemplateAddedTo</code> or <code>Opened</code>. A marker in the final level (<code>END_Main</code>) makes older saves fail to load, so it has none, and the Iron Throne level is left out to be safe.</p>
+
+<h2>Saves and rebuilds</h2>
+<p>A save keeps the goal it was saved with until the mod's <code>Version64</code> changes, so every build stamps a new version. The goal file is also renamed each build, which makes its <code>INITSECTION</code> run again.</p>
+
+<h2>Warnings</h2>
+<p>Points of no return use the same position check, with <code>QuestIsAccepted</code> and <code>QuestIsClosed</code> to list what's still open. Camp warnings hang off <code>TeleportedToCamp</code> and check quest steps with <code>QuestUpdateIsUnlocked</code>. The game has no event that lets a mod step in before a rest, so a warning on arriving at camp is the closest available.</p>
+
+<h2>Dialogue tags</h2>
+<p>The game's dialogue files are readable JSON once unpacked, with the writers' own notes on what a line does. Tags were matched to exact line handles using those files.</p>

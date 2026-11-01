@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How it works: Durge Guide</title>
+<meta name="description" content="How Durge Guide adds to Baldur&#x27;s Gate 3 without Script Extender, for modders.">
+<meta property="og:title" content="How it works: Durge Guide">
+<meta property="og:description" content="How Durge Guide adds to Baldur&#x27;s Gate 3 without Script Extender, for modders.">
+<meta property="og:image" content="img/hero-normal.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23b3202e' d='M12 2c4 6 7 9.500 7 13a7 7 0 0 1-14 0c0-3.500 3-7 7-13z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@500;700&family=Grenze:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="mark" href="index.html">Durge Guide</a>
+  <nav aria-label="Main"><a href="tiers.html">Tiers</a><a href="in-game.html">In the game</a><a href="screenshots.html">Screenshots</a><a href="install.html" aria-current=page>Docs</a></nav>
+</header>
+<main id="main">
+<div class="docs"><nav class="docs-nav" aria-label="Docs"><a href="install.html">Install</a><a href="using.html">Using it</a><a href="compatibility.html">Compatibility</a><a href="how-it-works.html" aria-current=page>How it works</a><a href="faq.html">FAQ</a><a href="credits.html">Credits</a></nav><article class="prose">
+<h1>How it works</h1>
+<p>For modders. Everything here is an Osiris story goal plus data files, so it needs no Script Extender and can run on the native Linux build.</p>
+
+<h2>Popups and notices</h2>
+<p>An existing save never gains a mod's new level objects, so triggers placed in a level wouldn't fire. Instead, a timer checks the host's position once a second against a 16-metre grid of spots. Notes are <code>UnifiedTutorial</code> entries with the side-popup modal type, so they get the journal archive for free.</p>
+<ul>
+  <li>Two side popups can be on screen. A third call is dropped, but still counted as seen, so popups are spaced 6 seconds apart.</li>
+  <li>A popup raised under the loading screen is lost in the same way, so nothing fires until the party has moved.</li>
+  <li><code>ShowNotification</code> takes raw strings, which gives the one-line notices.</li>
+</ul>
+
+<h2>Text in the game's own screens</h2>
+<p>A mod's localization file with the same handle doesn't override the game's text. What does work is shipping a full copy of <code>english.loca</code> inside the mod's pak. The build extracts the current file from the installed game, adds the notes to quest steps, dialogue lines and item descriptions, and packs it. That's also why a tier has to be chosen at build time.</p>
+
+<h2>Map pins</h2>
+<p>Journal markers need an existing object, so each one snaps to a vanilla object nearby. They stay hidden until <code>ShowMapMarker</code> is called, and the shown state is saved, so a timer shows only those within 160 metres. Pins clear on <code>TemplateAddedTo</code> or <code>Opened</code>. A marker in the final level (<code>END_Main</code>) makes older saves fail to load, so it has none, and the Iron Throne level is left out to be safe.</p>
+
+<h2>Saves and rebuilds</h2>
+<p>A save keeps the goal it was saved with until the mod's <code>Version64</code> changes, so every build stamps a new version. The goal file is also renamed each build, which makes its <code>INITSECTION</code> run again.</p>
+
+<h2>Warnings</h2>
+<p>Points of no return use the same position check, with <code>QuestIsAccepted</code> and <code>QuestIsClosed</code> to list what's still open. Camp warnings hang off <code>TeleportedToCamp</code> and check quest steps with <code>QuestUpdateIsUnlocked</code>. The game has no event that lets a mod step in before a rest, so a warning on arriving at camp is the closest available.</p>
+
+<h2>Dialogue tags</h2>
+<p>The game's dialogue files are readable JSON once unpacked, with the writers' own notes on what a line does. Tags were matched to exact line handles using those files.</p>
+</article></div>
+</main>
+<footer class="foot">
+  <p>Unofficial fan project, not affiliated with Larian Studios. Baldur's Gate 3 and its screenshots are &copy; Larian Studios. <a href="credits.html">Credits and licences</a>.</p>
+</footer>
+</body>
+</html>

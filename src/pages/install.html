@@ -1,0 +1,32 @@
+<!-- Install | How to install Durge Guide, choose a tier and keep it working after a game patch. | docs -->
+<h1>Install</h1>
+<p class="note">There's no public download yet. These steps are how it's installed on the test machine today, and they'll carry over to a release.</p>
+
+<h2>What you need</h2>
+<ul>
+  <li>Baldur's Gate 3. It's been tested on the native Linux build. See <a href="compatibility.html">Compatibility</a> for Windows.</li>
+  <li>The game set to English. Other languages won't show the quest, dialogue or item text.</li>
+  <li>Tutorials turned on in the game's options, because notes use the tutorial popup.</li>
+  <li>You don't need Script Extender.</li>
+</ul>
+
+<h2>Install it</h2>
+<ol>
+  <li>Close the game.</li>
+  <li>Put <code>DurgeGuide.pak</code> in the game's <code>Mods</code> folder. On Linux that's <code>~/.local/share/Larian Studios/Baldur's Gate 3/Mods/</code>.</li>
+  <li>Enable it in <code>modsettings.lsx</code>. The included <code>install.py</code> does both steps and keeps a backup of your settings.</li>
+  <li>Start the game and load a save. Mod Verification opens, so choose <b>Start Game</b>. The story recompiles, which takes a little longer than a normal load.</li>
+  <li>Take a few steps. The first box explains your tier.</li>
+</ol>
+<p>Existing saves work. You don't need to start a new game.</p>
+
+<h2>Change tier</h2>
+<p>With the game closed, run this from the mod's folder, using <code>minimal</code>, <code>normal</code> or <code>extensive</code>:</p>
+<pre><code>./tier.sh extensive</code></pre>
+<p>It rebuilds and installs the mod. The next load shows Mod Verification again. Notes you've already seen stay seen, and they'll read differently in the journal.</p>
+
+<h2>After a game patch</h2>
+<p>The mod carries an edited copy of the game's English text. After a patch, that copy is out of date until you rebuild, so rerun <code>tier.sh</code>. On Linux, the included systemd unit does this for you when the game's language file changes, and it keeps your tier.</p>
+
+<h2>Remove it</h2>
+<p>Removing the mod in the middle of a run hasn't been tested. Keep a save from before you installed it.</p>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Install: Durge Guide</title>
+<meta name="description" content="How to install Durge Guide, choose a tier and keep it working after a game patch.">
+<meta property="og:title" content="Install: Durge Guide">
+<meta property="og:description" content="How to install Durge Guide, choose a tier and keep it working after a game patch.">
+<meta property="og:image" content="img/hero-normal.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23b3202e' d='M12 2c4 6 7 9.500 7 13a7 7 0 0 1-14 0c0-3.500 3-7 7-13z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@500;700&family=Grenze:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="mark" href="index.html">Durge Guide</a>
+  <nav aria-label="Main"><a href="tiers.html">Tiers</a><a href="in-game.html">In the game</a><a href="screenshots.html">Screenshots</a><a href="install.html" aria-current=page>Docs</a></nav>
+</header>
+<main id="main">
+<div class="docs"><nav class="docs-nav" aria-label="Docs"><a href="install.html" aria-current=page>Install</a><a href="using.html">Using it</a><a href="compatibility.html">Compatibility</a><a href="how-it-works.html">How it works</a><a href="faq.html">FAQ</a><a href="credits.html">Credits</a></nav><article class="prose">
+<h1>Install</h1>
+<p class="note">There's no public download yet. These steps are how it's installed on the test machine today, and they'll carry over to a release.</p>
+
+<h2>What you need</h2>
+<ul>
+  <li>Baldur's Gate 3. It's been tested on the native Linux build. See <a href="compatibility.html">Compatibility</a> for Windows.</li>
+  <li>The game set to English. Other languages won't show the quest, dialogue or item text.</li>
+  <li>Tutorials turned on in the game's options, because notes use the tutorial popup.</li>
+  <li>You don't need Script Extender.</li>
+</ul>
+
+<h2>Install it</h2>
+<ol>
+  <li>Close the game.</li>
+  <li>Put <code>DurgeGuide.pak</code> in the game's <code>Mods</code> folder. On Linux that's <code>~/.local/share/Larian Studios/Baldur's Gate 3/Mods/</code>.</li>
+  <li>Enable it in <code>modsettings.lsx</code>. The included <code>install.py</code> does both steps and keeps a backup of your settings.</li>
+  <li>Start the game and load a save. Mod Verification opens, so choose <b>Start Game</b>. The story recompiles, which takes a little longer than a normal load.</li>
+  <li>Take a few steps. The first box explains your tier.</li>
+</ol>
+<p>Existing saves work. You don't need to start a new game.</p>
+
+<h2>Change tier</h2>
+<p>With the game closed, run this from the mod's folder, using <code>minimal</code>, <code>normal</code> or <code>extensive</code>:</p>
+<pre><code>./tier.sh extensive</code></pre>
+<p>It rebuilds and installs the mod. The next load shows Mod Verification again. Notes you've already seen stay seen, and they'll read differently in the journal.</p>
+
+<h2>After a game patch</h2>
+<p>The mod carries an edited copy of the game's English text. After a patch, that copy is out of date until you rebuild, so rerun <code>tier.sh</code>. On Linux, the included systemd unit does this for you when the game's language file changes, and it keeps your tier.</p>
+
+<h2>Remove it</h2>
+<p>Removing the mod in the middle of a run hasn't been tested. Keep a save from before you installed it.</p>
+</article></div>
+</main>
+<footer class="foot">
+  <p>Unofficial fan project, not affiliated with Larian Studios. Baldur's Gate 3 and its screenshots are &copy; Larian Studios. <a href="credits.html">Credits and licences</a>.</p>
+</footer>
+</body>
+</html>
