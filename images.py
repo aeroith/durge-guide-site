@@ -15,12 +15,12 @@ SHOTS = {
     "a1-normal-map": "normal-a1-map", "a1-extensive-map": "extensive-a1-map", "a1-normal-quest": "normal-a1-quest", "a1-extensive-quest": "extensive-a1-quest",
     "a1-minimal-camp-warning": "minimal-a1-camp-warning",
     "a2-normal-quest": "normal-a2-quest", "a2-extensive-quest": "extensive-a2-quest", "a2-normal-map": "normal-a2-map", "a2-extensive-map": "extensive-a2-map",
-    "a3-minimal-note": "minimal-a3-box", "a3-minimal-dialogue": "minimal-a3-dialogue-notag", "a3-minimal-quest": "minimal-a3-quest-urgency", "a3-minimal-exit": "minimal-a3-point-of-no-return-1",
+    "a3-minimal-note": "minimal-a3-koll-2", "a3-minimal-dialogue": "minimal-a3-dialogue-notag", "a3-minimal-quest": "minimal-a3-quest-urgency", "a3-normal-exit": "normal-a3-exit-3",
     "a3-normal-note-shop": "normal-a3-danthelon-3", "a3-normal-note-pool": "normal-a3-dock-3", "a3-normal-note-last-shop": "normal-a3-koll-2",
-    "a3-normal-box-controller": "normal-a3-box-controller", "a3-normal-notice": "normal-a3-voss-2", "a3-normal-notice-barn": "normal-a3-barn-controller-2",
-    "a3-normal-notice-refugee": "normal-a3-refugee-controller-2", "a3-normal-dialogue": "normal-a3-dialogue-controller", "a3-normal-tooltip": "normal-a3-tooltip-controller",
+    "a3-extensive-box-controller": "extensive-a3-barn-controller-2", "a3-normal-notice-barn": "normal-a3-barn-controller-3",
+    "a3-extensive-notice-refugee": "extensive-a3-refugee-controller-2", "a3-normal-dialogue": "normal-a3-dialogue-controller", "a3-normal-tooltip": "normal-a3-tooltip-controller",
     "a3-normal-journal": "normal-a3-journal-note",
-    "a3-extensive-note-shop": "extensive-a3-danthelon-3", "a3-extensive-note-pool": "extensive-a3-dock-2", "a3-extensive-exit": "extensive-a3-checklist-1",
+    "a3-extensive-note-shop": "extensive-a3-danthelon-2", "a3-extensive-note-pool": "extensive-a3-dock-2", "a3-extensive-exit": "extensive-a3-exit",
     "a3-extensive-dialogue": "extensive-a3-dialogue-controller-2", "a3-extensive-tooltip": "extensive-a3-tooltip-controller", "a3-extensive-journal": "extensive-a3-journal-note",
 }
 for new, old in SHOTS.items():
@@ -53,10 +53,10 @@ def compare(name, crops, box, stack=False):
 
 T = ("Minimal", "Normal", "Extensive")
 compare("notes", list(zip(T, ("minimal-a1-waukeens-rest-3", "normal-a1-waukeens-rest-3", "extensive-a1-waukeens-rest-3"))), (130, 130, 760, 760))
-compare("notes-act3", list(zip(T, ("minimal-a3-box", "normal-a3-danthelon-3", "extensive-a3-danthelon-3"))), (130, 130, 760, 660))
+compare("notes-act3", list(zip(T, ("minimal-a3-koll-2", "normal-a3-koll-2", "extensive-a3-koll-2"))), (130, 130, 760, 660))
 compare("quest-lines", list(zip(T, ("minimal-a3-quest-urgency", "normal-a1-quest", "extensive-a1-quest"))), (1240, 270, 2400, 760))
 compare("dialogue", list(zip(T, ("minimal-a3-dialogue-notag", "normal-a3-dialogue-controller", "extensive-a3-dialogue-controller"))), (360, 960, 2240, 1400), stack=True)
-compare("tooltips", list(zip(T[1:], ("normal-a3-tooltip-controller", "extensive-a3-tooltip-controller"))), (1780, 480, 2300, 1270))
+compare("tooltips", list(zip(T[1:], ("normal-a3-tooltip-controller", "extensive-a3-tooltip-controller"))), (1710, 560, 2230, 1290))
 compare("map-pins", list(zip(T[1:], ("normal-a1-map", "extensive-a1-map"))), (500, 80, 2200, 1390))
 
 sizes = {}

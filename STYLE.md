@@ -35,14 +35,13 @@ Sentences often open with Though, Despite or While, and the joke arrives at the 
 |---|---|
 | Home, Tiers, In the game | Narrator |
 | Captions and table cells | Item text |
-| Docs | The narrator's rhythm, with exact instructions. Clarity wins every time. |
-| How it works, Credits | Plain. A modder or a lawyer needs the fact. |
+| Docs, How it works, Credits | The narrator's rhythm, with exact instructions and facts. Clarity wins every time. |
+| Legal lines, buttons, tabs and spoiler bars | Plain, the way the game's own interface is. |
 
 ## Limits
 
 - Never give up a fact for a flourish. Test results, limits and "not released" stay exact.
 - One turn per paragraph at most. Most sentences just say the thing.
 - Nothing from later in the story. No Bhaal, no butler, no twists.
-- Buttons, tabs and spoiler bars stay plain, the way the game's own interface does.
 
 `python3 style.py` measures every page against these numbers.
