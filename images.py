@@ -20,6 +20,7 @@ SHOTS = {
     "a3-extensive-box-controller": "extensive-a3-barn-controller-2", "a3-normal-notice-barn": "normal-a3-barn-controller-3",
     "a3-extensive-notice-refugee": "extensive-a3-refugee-controller-2", "a3-normal-dialogue": "normal-a3-dialogue-controller", "a3-normal-tooltip": "normal-a3-tooltip-controller",
     "a3-normal-journal": "normal-a3-journal-note",
+    "a1-normal-journal": "normal-a1-journal", "a1-extensive-journal": "extensive-a1-journal",
     "a3-extensive-note-shop": "extensive-a3-danthelon-2", "a3-extensive-note-pool": "extensive-a3-dock-2", "a3-extensive-exit": "extensive-a3-exit",
     "a3-extensive-dialogue": "extensive-a3-dialogue-controller-2", "a3-extensive-tooltip": "extensive-a3-tooltip-controller", "a3-extensive-journal": "extensive-a3-journal-note",
 }
