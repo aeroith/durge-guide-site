@@ -1,0 +1,218 @@
+{
+ "schemaVersion": 2,
+ "generatedAt": "2026-11-02T17:21:38.139323+00:00",
+ "title": "Design System: Durge Guide",
+ "extensions": {
+  "colorMeta": {
+   "ink": {
+    "role": "neutral",
+    "displayName": "Ink"
+   },
+   "night": {
+    "role": "neutral",
+    "displayName": "Night"
+   },
+   "wine-deep": {
+    "role": "neutral",
+    "displayName": "Deep Oxblood"
+   },
+   "wine": {
+    "role": "neutral",
+    "displayName": "Oxblood"
+   },
+   "wine-lift": {
+    "role": "neutral",
+    "displayName": "Lit Oxblood"
+   },
+   "bone": {
+    "role": "neutral",
+    "displayName": "Parchment"
+   },
+   "ash": {
+    "role": "neutral",
+    "displayName": "Ash"
+   },
+   "gold-hi": {
+    "role": "primary",
+    "displayName": "Candle"
+   },
+   "gold": {
+    "role": "primary",
+    "displayName": "Brass"
+   },
+   "gold-mid": {
+    "role": "primary",
+    "displayName": "Tarnish"
+   },
+   "gold-low": {
+    "role": "primary",
+    "displayName": "Old Tarnish"
+   },
+   "blood": {
+    "role": "secondary",
+    "displayName": "Blood"
+   }
+  },
+  "typographyMeta": {
+   "display": {
+    "displayName": "Display",
+    "purpose": "The home question and the closing line."
+   },
+   "headline": {
+    "displayName": "Headline",
+    "purpose": "Section heads."
+   },
+   "title": {
+    "displayName": "Title",
+    "purpose": "Sub-heads and tier labels."
+   },
+   "lede": {
+    "displayName": "Lede",
+    "purpose": "Opening paragraphs on persuading pages."
+   },
+   "body": {
+    "displayName": "Body",
+    "purpose": "Running text at 54ch."
+   },
+   "label": {
+    "displayName": "Label",
+    "purpose": "Captions and table notes."
+   }
+  },
+  "shadows": [],
+  "motion": [
+   {
+    "name": "ease",
+    "value": "cubic-bezier(.16, 1, .3, 1)",
+    "purpose": "Arrivals: the banner opening, the plaque's diamonds."
+   },
+   {
+    "name": "fast",
+    "value": "140ms",
+    "purpose": "Hover and colour feedback."
+   },
+   {
+    "name": "state",
+    "value": "240ms",
+    "purpose": "The narrator's line changing."
+   },
+   {
+    "name": "reveal",
+    "value": "1000ms cubic-bezier(.4, .1, .25, 1)",
+    "purpose": "The scene spreading from the note."
+   }
+  ],
+  "breakpoints": [
+   {
+    "name": "phone",
+    "value": "640px"
+   },
+   {
+    "name": "tiers-stack",
+    "value": "899px"
+   },
+   {
+    "name": "rail",
+    "value": "901px"
+   },
+   {
+    "name": "scene",
+    "value": "1100px"
+   },
+   {
+    "name": "contents",
+    "value": "1280px"
+   }
+  ]
+ },
+ "components": [
+  {
+   "name": "Plaque",
+   "kind": "button",
+   "refersTo": "button-plaque",
+   "description": "The primary action.",
+   "html": "<a class=\"ds-btn\" href=\"#\">Compare the three tiers</a>",
+   "css": ".ds-btn{position:relative;display:inline-flex;align-items:center;min-height:48px;padding:.35em 1.5em .4em;font:600 1.3125rem/1.1 Grenze,Georgia,serif;color:#f0d9a4;text-decoration:none;background:linear-gradient(180deg,#2a1712,#0b0506);border:1px solid #dcb76c;border-radius:3px}.ds-btn:hover{color:#0b0506;background:linear-gradient(180deg,#f0d9a4,#dcb76c)}.ds-btn:focus-visible{outline:2px solid #f0d9a4;outline-offset:3px}.ds-btn::before,.ds-btn::after{content:'';position:absolute;top:50%;width:9px;height:9px;margin-top:-4.5px;background:#dcb76c;transform:rotate(45deg)}.ds-btn::before{left:-5px}.ds-btn::after{right:-5px}"
+  },
+  {
+   "name": "Dialogue lines",
+   "kind": "custom",
+   "refersTo": "dialogue-lines",
+   "description": "The tier switch, answered like the game's conversations.",
+   "html": "<div class=\"ds-lines\"><label><span>1.</span> <b>Minimal</b> - Never lose a thing by accident</label><label class=\"on\"><span>2.</span> <b>Normal</b> - Steered, not spoiled</label></div>",
+   "css": ".ds-lines label{display:block;padding:.42em .5em .46em 3.1rem;font:400 1.5rem/1.2 Grenze,Georgia,serif;color:#efe6d6;cursor:pointer}.ds-lines label:hover{color:#f0d9a4}.ds-lines .on{color:#f0d9a4;background:linear-gradient(90deg,rgba(220,183,108,.2),transparent 85%)}"
+  },
+  {
+   "name": "Journal tab",
+   "kind": "nav",
+   "refersTo": "journal-tab",
+   "description": "Tabs that hang from a gold rule.",
+   "html": "<nav class=\"ds-strip\"><a href=\"#\">Notes</a><a href=\"#\" class=\"on\">Quests</a></nav>",
+   "css": ".ds-strip{display:flex;gap:2px}.ds-strip a{display:flex;align-items:center;min-height:46px;padding:4px 18px 6px;font:500 1.1875rem Grenze,Georgia,serif;color:#c6b5a6;text-decoration:none;background:linear-gradient(180deg,#0b0506,#140b0c);border:1px solid #7d6540;border-top:0;border-radius:0 0 10px 10px}.ds-strip a:hover{color:#efe6d6}.ds-strip .on{color:#efe6d6;border-color:#dcb76c;background:linear-gradient(180deg,#6a1019,#2c080d)}"
+  },
+  {
+   "name": "Popup note",
+   "kind": "card",
+   "refersTo": "panel",
+   "description": "The game's side popup, for a note or warning.",
+   "html": "<div class=\"ds-note\"><p>There is no public download yet.</p></div>",
+   "css": ".ds-note{position:relative;max-width:54ch;padding:1rem 2rem 1.5rem;font:400 1.25rem/1.5 Grenze,Georgia,serif;color:#efe6d6;background:linear-gradient(180deg,#140b0c,#0b0506);border:1px solid #a98a52;border-radius:10px}"
+  },
+  {
+   "name": "Spoiler seal",
+   "kind": "custom",
+   "refersTo": "gate",
+   "description": "A native details element that hides a later-story shot.",
+   "html": "<details class=\"ds-gate\"><summary>Hidden: Act 3 conversation</summary></details>",
+   "css": ".ds-gate{background:linear-gradient(180deg,#140b0c,#0b0506);border:1px solid #7d6540;border-radius:10px;color:#efe6d6;font:600 1.25rem Grenze,Georgia,serif}.ds-gate summary{padding:.75rem 1.5rem;cursor:pointer}.ds-gate:hover{border-color:#a98a52}"
+  }
+ ],
+ "narrative": {
+  "northStar": "The Game's Own Screens",
+  "overview": "The mod has no interface of its own, and the site's controls and frames are the grammar of the game's interface, redrawn in our own CSS and SVG. Later-story screenshots sit behind wax seals, because hiding things is what the mod does.",
+  "keyCharacteristics": [
+   "Near-black panels with a gold hairline, on an oxblood ground.",
+   "Blackletter for names and questions, a calm text face for everything read.",
+   "Real captures as the proof. Ornament is only ever our own CSS and SVG.",
+   "One authored motion per moment.",
+   "Works without JavaScript."
+  ],
+  "rules": [
+   {
+    "name": "The Metal Is Thin Rule",
+    "body": "Gold is a hairline or a small word. It never fills a surface, except a plaque being pressed.",
+    "section": "colors"
+   },
+   {
+    "name": "The Blood Is Rare Rule",
+    "body": "Blood marks where you are or what is sealed.",
+    "section": "colors"
+   },
+   {
+    "name": "The Blackletter Is For Names Rule",
+    "body": "Grenze Gotisch is only for headings of 1.5rem or more.",
+    "section": "typography"
+   },
+   {
+    "name": "The Line Not Shadow Rule",
+    "body": "If a surface needs lifting, it gets a darker ground and a hairline.",
+    "section": "elevation"
+   }
+  ],
+  "dos": [
+   "Do put every fact, count and test result in as written.",
+   "Do keep later-story captures behind a seal.",
+   "Do cut new crops from docs/img and declare them in images.py.",
+   "Do give every motion a reduced-motion path.",
+   "Do keep the site fully working with scripts off."
+  ],
+  "donts": [
+   "Don't use a kicker above a heading, section numbers, gradient text or glass.",
+   "Don't use a thick coloured edge on a callout.",
+   "Don't use radial glows.",
+   "Don't draw particles or anything else over a capture.",
+   "Don't copy Larian's logo, or make the site look official.",
+   "Don't add a light theme as the identity."
+  ]
+ }
+}

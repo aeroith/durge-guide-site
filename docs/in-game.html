@@ -1,20 +1,31 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>In the game: Durge Guide</title>
 <meta name="description" content="Every way Durge Guide appears in Baldur&#x27;s Gate 3: notes, journal lines, dialogue tags, tooltips, map pins and warnings.">
+<meta name="theme-color" content="#0b0506">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Durge Guide">
 <meta property="og:title" content="In the game: Durge Guide">
 <meta property="og:description" content="Every way Durge Guide appears in Baldur&#x27;s Gate 3: notes, journal lines, dialogue tags, tooltips, map pins and warnings.">
-<meta property="og:image" content="img/hero-normal.jpg">
+<meta property="og:url" content="https://aeroith.github.io/durge-guide-site/in-game.html">
+<meta property="og:image" content="https://aeroith.github.io/durge-guide-site/img/hero-normal.jpg">
+<meta property="og:image:width" content="1880">
+<meta property="og:image:height" content="1058">
+<meta property="og:image:alt" content="A short note in the game's side popup at Waukeen's Rest">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://aeroith.github.io/durge-guide-site/in-game.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23b3202e' d='M12 2c4 6 7 9.500 7 13a7 7 0 0 1-14 0c0-3.500 3-7 7-13z'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@500;700&family=Grenze:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="preload" href="fonts/grenze.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/grenze-gotisch.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="print.css" media="print">
+<script src="site.js" defer></script>
 </head>
-<body>
+<body class="on-in-game">
 <a class="skip" href="#main">Skip to content</a>
 <header class="top">
   <a class="mark" href="index.html">Durge Guide</a>
@@ -24,13 +35,17 @@
 
 <div class="page-head">
   <h1>In the game</h1>
-  <p>These are real captures. Anything from later in the story stays hidden until you ask for it. The party in the Act 3 shots is level 2, brought there by a test jump. It shows. A shot marked 'earlier cut' was taken just before the notes' last pass, so its wording is a little off.</p>
+  <p>These are real captures. Anything from later in the story stays hidden until you ask for it. The party in the Act 3 shots is level 2, brought there by a test jump. It shows. A shot marked 'earlier cut' was taken just before the notes' last pass, so its wording is a little off. Select any shot to see it at full size.</p>
 </div>
+
+<nav class="strip tabs-sticky" aria-label="On this page" data-spy>
+  <a href="#notes">Notes</a><a href="#notices">Notices</a><a href="#glints">Glints</a><a href="#journal">Archive</a><a href="#quests">Quests</a><a href="#dialogue">Dialogue</a><a href="#items">Tooltips</a><a href="#map">Map pins</a><a href="#warnings">Warnings</a>
+</nav>
 
 <section id="notes">
   <h2>Where you stand</h2>
   <div class="split">
-    <div><figure class="shot"><a href="img/hero-extensive.jpg"><img src="img/t/hero-extensive.jpg" srcset="img/t/hero-extensive.jpg 800w, img/hero-extensive.jpg 1880w" sizes="(max-width: 900px) 100vw, 1000px" width="1880" height="1058" loading="lazy" alt="Waukeen&#x27;s Rest with two short notes at the top left, each ending in There&#x27;s more in your journal"></a><figcaption>Extensive, in Act 1. An earlier cut of the wording.</figcaption></figure></div>
+    <div><figure class="shot art"><a href="img/hero-normal.jpg"><picture><source media="(max-width: 640px)" type="image/webp" srcset="img/w/hero-note-normal-480.webp 480w, img/w/hero-note-normal-590.webp 590w" sizes="100vw" width="590" height="820"><source type="image/webp" srcset="img/w/hero-normal-480.webp 480w, img/w/hero-normal-800.webp 800w, img/w/hero-normal-1280.webp 1280w, img/w/hero-normal-1600.webp 1600w, img/w/hero-normal-1880.webp 1880w" sizes="(max-width: 900px) 100vw, (max-width: 1272px) 62vw, 760px"><img src="img/t/hero-normal.jpg" sizes="(max-width: 900px) 100vw, (max-width: 1272px) 62vw, 760px" width="1880" height="1058" loading="lazy" decoding="async" alt="Waukeen&#x27;s Rest with a short note at the top left, ending in There&#x27;s more in your journal"></picture></a><figcaption>Normal, in Act 1.</figcaption></figure></div>
     <div>
       <p>Walk near the right spot and the game's own side popup opens at the top left. Within ten seconds, it fades. On a controller, it offers a Dismiss button.</p>
       <p>A note says what matters now, in a line or two. If there's more, its footer says so: 'There's more in your journal'. Many notes have nothing more to say, and no footer.</p>
@@ -38,22 +53,22 @@
       <p>Once all of a note's quests are closed, it falls silent.</p>
     </div>
   </div>
-  <div class="pair">
-    <figure class="shot"><a href="img/hero-minimal.jpg"><img src="img/t/hero-minimal.jpg" srcset="img/t/hero-minimal.jpg 800w, img/hero-minimal.jpg 1880w" sizes="(max-width: 900px) 100vw, 1000px" width="1880" height="1058" loading="lazy" alt="Waukeen&#x27;s Rest with a one-line note"></a><figcaption>Minimal.</figcaption></figure>
-    <figure class="shot"><a href="img/hero-normal.jpg"><img src="img/t/hero-normal.jpg" srcset="img/t/hero-normal.jpg 800w, img/hero-normal.jpg 1880w" sizes="(max-width: 900px) 100vw, 1000px" width="1880" height="1058" loading="lazy" alt="Waukeen&#x27;s Rest with a short note and a footer"></a><figcaption>The same spot at Normal.</figcaption></figure>
+  <div class="row n2">
+    <figure class="shot art"><a href="img/hero-minimal.jpg"><picture><source media="(max-width: 640px)" type="image/webp" srcset="img/w/hero-note-minimal-480.webp 480w, img/w/hero-note-minimal-590.webp 590w" sizes="100vw" width="590" height="820"><source type="image/webp" srcset="img/w/hero-minimal-480.webp 480w, img/w/hero-minimal-800.webp 800w, img/w/hero-minimal-1280.webp 1280w, img/w/hero-minimal-1600.webp 1600w, img/w/hero-minimal-1880.webp 1880w" sizes="(max-width: 900px) 100vw, (max-width: 1272px) 62vw, 760px"><img src="img/t/hero-minimal.jpg" sizes="(max-width: 900px) 100vw, (max-width: 1272px) 62vw, 760px" width="1880" height="1058" loading="lazy" decoding="async" alt="Waukeen&#x27;s Rest with a one-line note"></picture></a><figcaption>Minimal.</figcaption></figure>
+    <figure class="shot"><a href="img/hero-extensive.jpg"><picture><source type="image/webp" srcset="img/w/hero-extensive-480.webp 480w, img/w/hero-extensive-800.webp 800w, img/w/hero-extensive-1280.webp 1280w, img/w/hero-extensive-1600.webp 1600w, img/w/hero-extensive-1880.webp 1880w" sizes="(max-width: 640px) 100vw, (max-width: 1272px) 50vw, 620px"><img src="img/t/hero-extensive.jpg" sizes="(max-width: 640px) 100vw, (max-width: 1272px) 50vw, 620px" width="1880" height="1058" loading="lazy" decoding="async" alt="Waukeen&#x27;s Rest with two short notes at the top left, each with a footer"></picture></a><figcaption>The same spot at Extensive. An earlier cut of the wording.</figcaption></figure>
   </div>
 </section>
 
 <section id="notices">
   <h2>One-line notices</h2>
   <p>Small finds get one line in the game's notice bubble. A couple of seconds, and it's gone. The full note waits in your journal. Notices queue behind the game's own banners, so none are lost. Minimal doesn't trouble you with small finds.</p>
-  <details class="gate"><summary><span>Hidden: Act 3 side quest</span><span class="show">Show screenshot</span></summary><figure class="shot"><a href="img/a3-normal-notice-barn.jpg"><img src="img/t/a3-normal-notice-barn.jpg" srcset="img/t/a3-normal-notice-barn.jpg 800w, img/a3-normal-notice-barn.jpg 1920w" sizes="(max-width: 900px) 100vw, 1000px" width="1920" height="1080" loading="lazy" alt="A barn with a one-line notice about what needs doing there"></a><figcaption>Normal, on a controller.</figcaption></figure></details>
+  <details class="gate"><summary><span class="seal"></span><span class="why"><span class="hid">Hidden: </span>Act 3 side quest</span><span class="show">Show screenshot</span><span class="hide">Hide</span></summary><div class="gate-body"><figure class="shot"><a href="img/a3-normal-notice-barn.jpg"><picture><source type="image/webp" srcset="img/w/a3-normal-notice-barn-480.webp 480w, img/w/a3-normal-notice-barn-800.webp 800w, img/w/a3-normal-notice-barn-1280.webp 1280w, img/w/a3-normal-notice-barn-1920.webp 1920w" sizes="(max-width: 1272px) 100vw, 1240px"><img src="img/t/a3-normal-notice-barn.jpg" sizes="(max-width: 1272px) 100vw, 1240px" width="1920" height="1080" loading="lazy" decoding="async" alt="A barn with a one-line notice about what needs doing there"></picture></a><figcaption>Normal, on a controller.</figcaption></figure></div></details>
 </section>
 
 <section id="glints">
   <h2>Treasure glints</h2>
   <div class="split">
-    <div><figure class="shot"><a href="img/a1-normal-glint.jpg"><img src="img/t/a1-normal-glint.jpg" srcset="img/t/a1-normal-glint.jpg 800w, img/a1-normal-glint.jpg 1920w" sizes="(max-width: 900px) 100vw, 1000px" width="1920" height="1080" loading="lazy" alt="The Risen Road with a burst of white flecks beside a buried chest"></a><figcaption>White flecks above a buried chest.</figcaption></figure></div>
+    <div><figure class="shot"><a href="img/a1-normal-glint.jpg"><picture><source type="image/webp" srcset="img/w/a1-normal-glint-480.webp 480w, img/w/a1-normal-glint-800.webp 800w, img/w/a1-normal-glint-1280.webp 1280w, img/w/a1-normal-glint-1920.webp 1920w" sizes="(max-width: 900px) 100vw, (max-width: 1272px) 62vw, 760px"><img src="img/t/a1-normal-glint.jpg" sizes="(max-width: 900px) 100vw, (max-width: 1272px) 62vw, 760px" width="1920" height="1080" loading="lazy" decoding="async" alt="The Risen Road with a burst of white flecks beside a buried chest"></picture></a><figcaption>White flecks above a buried chest.</figcaption></figure></div>
     <div><p>A hidden treasure sparkles once, the first time you come within 12 metres. There is no box. There is nothing to dismiss. Minimal has no glints.</p></div>
   </div>
 </section>
@@ -61,59 +76,73 @@
 <section id="journal">
   <h2>The notes archive</h2>
   <p>Every note you've reached stays in the journal's Tutorials tab, along with the coordinates from your minimap. At Minimal, it keeps the words you saw on the ground. At Normal, some notes add a few lines that give nothing away. At Extensive, the detail follows, on the notes that earn it.</p>
-  <div class="pair">
-    <figure class="shot"><a href="img/a1-normal-journal.jpg"><img src="img/t/a1-normal-journal.jpg" srcset="img/t/a1-normal-journal.jpg 800w, img/a1-normal-journal.jpg 1920w" sizes="(max-width: 900px) 100vw, 1000px" width="1920" height="1080" loading="lazy" alt="The Tutorials tab with a short note and three hints below it"></a><figcaption>Normal. An earlier cut of the wording.</figcaption></figure>
-    <figure class="shot"><a href="img/a1-extensive-journal.jpg"><img src="img/t/a1-extensive-journal.jpg" srcset="img/t/a1-extensive-journal.jpg 800w, img/a1-extensive-journal.jpg 1920w" sizes="(max-width: 900px) 100vw, 1000px" width="1920" height="1080" loading="lazy" alt="The Tutorials tab with the same note, and the rolls, loot and risks below it"></a><figcaption>Extensive. An earlier cut of the wording.</figcaption></figure>
+  <div class="row n2">
+    <figure class="shot art"><a href="img/a1-normal-journal.jpg"><picture><source media="(max-width: 640px)" type="image/webp" srcset="img/w/journal-note-normal-480.webp 480w, img/w/journal-note-normal-620.webp 620w" sizes="100vw" width="620" height="290"><source type="image/webp" srcset="img/w/a1-normal-journal-480.webp 480w, img/w/a1-normal-journal-800.webp 800w, img/w/a1-normal-journal-1280.webp 1280w, img/w/a1-normal-journal-1920.webp 1920w" sizes="(max-width: 900px) 100vw, (max-width: 1272px) 62vw, 760px"><img src="img/t/a1-normal-journal.jpg" sizes="(max-width: 900px) 100vw, (max-width: 1272px) 62vw, 760px" width="1920" height="1080" loading="lazy" decoding="async" alt="The Tutorials tab with a short note and three hints below it"></picture></a><figcaption>Normal. An earlier cut of the wording.</figcaption></figure>
+    <figure class="shot"><a href="img/a1-extensive-journal.jpg"><picture><source type="image/webp" srcset="img/w/a1-extensive-journal-480.webp 480w, img/w/a1-extensive-journal-800.webp 800w, img/w/a1-extensive-journal-1280.webp 1280w, img/w/a1-extensive-journal-1920.webp 1920w" sizes="(max-width: 640px) 100vw, (max-width: 1272px) 50vw, 620px"><img src="img/t/a1-extensive-journal.jpg" sizes="(max-width: 640px) 100vw, (max-width: 1272px) 50vw, 620px" width="1920" height="1080" loading="lazy" decoding="async" alt="The Tutorials tab with the same note, and the rolls, loot and risks below it"></picture></a><figcaption>Extensive. An earlier cut of the wording.</figcaption></figure>
   </div>
 </section>
 
 <section id="quests">
   <h2>Quest lines</h2>
   <p>A mark and a line beneath a quest step. At Minimal and Normal, a deadline never names what's coming. It says only 'Time-limited', 'Before your next rest' or 'Before you leave this act'. At Extensive, it names the event.</p>
-  <div class="pair">
-    <details class="gate"><summary><span>Hidden: Act 2 story</span><span class="show">Show screenshot</span></summary><figure class="shot"><a href="img/a2-normal-quest.jpg"><img src="img/t/a2-normal-quest.jpg" srcset="img/t/a2-normal-quest.jpg 800w, img/a2-normal-quest.jpg 1920w" sizes="(max-width: 900px) 100vw, 1000px" width="1920" height="1080" loading="lazy" alt="An Act 2 quest with short nudges under each step"></a><figcaption>Normal.</figcaption></figure></details>
-    <details class="gate"><summary><span>Hidden: Act 2 story</span><span class="show">Show screenshot</span></summary><figure class="shot"><a href="img/a2-extensive-quest.jpg"><img src="img/t/a2-extensive-quest.jpg" srcset="img/t/a2-extensive-quest.jpg 800w, img/a2-extensive-quest.jpg 1920w" sizes="(max-width: 900px) 100vw, 1000px" width="1920" height="1080" loading="lazy" alt="The same quest with full advice"></a><figcaption>Extensive.</figcaption></figure></details>
-  </div>
+  <details class="gate">
+    <summary><span class="seal"></span><span class="why"><span class="hid">Hidden: </span>Act 2 story</span><span class="show">Show 2 screenshots</span><span class="hide">Hide</span></summary>
+    <div class="gate-body">
+    <div class="row n2">
+    <figure class="shot"><a href="img/a2-normal-quest.jpg"><picture><source type="image/webp" srcset="img/w/a2-normal-quest-480.webp 480w, img/w/a2-normal-quest-800.webp 800w, img/w/a2-normal-quest-1280.webp 1280w, img/w/a2-normal-quest-1920.webp 1920w" sizes="(max-width: 640px) 100vw, (max-width: 1272px) 50vw, 620px"><img src="img/t/a2-normal-quest.jpg" sizes="(max-width: 640px) 100vw, (max-width: 1272px) 50vw, 620px" width="1920" height="1080" loading="lazy" decoding="async" alt="An Act 2 quest with short nudges under each step"></picture></a><figcaption>Normal.</figcaption></figure>
+    <figure class="shot"><a href="img/a2-extensive-quest.jpg"><picture><source type="image/webp" srcset="img/w/a2-extensive-quest-480.webp 480w, img/w/a2-extensive-quest-800.webp 800w, img/w/a2-extensive-quest-1280.webp 1280w, img/w/a2-extensive-quest-1920.webp 1920w" sizes="(max-width: 640px) 100vw, (max-width: 1272px) 50vw, 620px"><img src="img/t/a2-extensive-quest.jpg" sizes="(max-width: 640px) 100vw, (max-width: 1272px) 50vw, 620px" width="1920" height="1080" loading="lazy" decoding="async" alt="The same quest with full advice"></picture></a><figcaption>Extensive.</figcaption></figure>
+    </div>
+    </div>
+  </details>
 </section>
 
 <section id="dialogue">
   <h2>Dialogue tags</h2>
-  <p>A mark at the end of the line, inside the game's own dialogue box. Normal gives you only the mark: a star for a good line, red for one to avoid. Extensive adds what happens the moment you click, and a skull on Dark Urge choices. Minimal leaves your words alone.</p>
-  <div class="pair">
-    <details class="gate"><summary><span>Hidden: Act 3 conversation</span><span class="show">Show screenshot</span></summary><figure class="shot"><a href="img/a3-normal-dialogue.jpg"><img src="img/t/a3-normal-dialogue.jpg" srcset="img/t/a3-normal-dialogue.jpg 800w, img/a3-normal-dialogue.jpg 1920w" sizes="(max-width: 900px) 100vw, 1000px" width="1920" height="1080" loading="lazy" alt="A conversation with a star after one line"></a><figcaption>Normal, on a controller.</figcaption></figure></details>
-    <details class="gate"><summary><span>Hidden: Act 3 conversation</span><span class="show">Show screenshot</span></summary><figure class="shot"><a href="img/a3-extensive-dialogue.jpg"><img src="img/t/a3-extensive-dialogue.jpg" srcset="img/t/a3-extensive-dialogue.jpg 800w, img/a3-extensive-dialogue.jpg 1920w" sizes="(max-width: 900px) 100vw, 1000px" width="1920" height="1080" loading="lazy" alt="The same conversation with tags in words"></a><figcaption>Extensive, on a controller.</figcaption></figure></details>
-  </div>
+  <p>A mark at the end of the line, inside the game's own dialogue box. Normal gives you only the mark: a star <img class="icon" src="img/icon-star.jpg" width="38" height="38" alt="" loading="lazy"> for a good line, red <img class="icon" src="img/icon-mark.jpg" width="36" height="36" alt="" loading="lazy"> for one to avoid. Extensive adds what happens the moment you click, and a skull <img class="icon" src="img/icon-skull.jpg" width="26" height="26" alt="" loading="lazy"> on Dark Urge choices. Minimal leaves your words alone.</p>
+  <details class="gate">
+    <summary><span class="seal"></span><span class="why"><span class="hid">Hidden: </span>Act 3 conversation</span><span class="show">Show 2 screenshots</span><span class="hide">Hide</span></summary>
+    <div class="gate-body">
+    <div class="row n2">
+    <figure class="shot"><a href="img/a3-normal-dialogue.jpg"><picture><source type="image/webp" srcset="img/w/a3-normal-dialogue-480.webp 480w, img/w/a3-normal-dialogue-800.webp 800w, img/w/a3-normal-dialogue-1280.webp 1280w, img/w/a3-normal-dialogue-1920.webp 1920w" sizes="(max-width: 640px) 100vw, (max-width: 1272px) 50vw, 620px"><img src="img/t/a3-normal-dialogue.jpg" sizes="(max-width: 640px) 100vw, (max-width: 1272px) 50vw, 620px" width="1920" height="1080" loading="lazy" decoding="async" alt="A conversation with a star after one line"></picture></a><figcaption>Normal, on a controller.</figcaption></figure>
+    <figure class="shot"><a href="img/a3-extensive-dialogue.jpg"><picture><source type="image/webp" srcset="img/w/a3-extensive-dialogue-480.webp 480w, img/w/a3-extensive-dialogue-800.webp 800w, img/w/a3-extensive-dialogue-1280.webp 1280w, img/w/a3-extensive-dialogue-1920.webp 1920w" sizes="(max-width: 640px) 100vw, (max-width: 1272px) 50vw, 620px"><img src="img/t/a3-extensive-dialogue.jpg" sizes="(max-width: 640px) 100vw, (max-width: 1272px) 50vw, 620px" width="1920" height="1080" loading="lazy" decoding="async" alt="The same conversation with tags in words"></picture></a><figcaption>Extensive, on a controller.</figcaption></figure>
+    </div>
+    </div>
+  </details>
 </section>
 
 <section id="items">
   <h2>Item tooltips</h2>
   <div class="split flip">
     <div><p>Notable items end their tooltip with who they suit. On a controller, selecting the item shows it. Minimal leaves tooltips as it found them.</p></div>
-    <div><figure class="shot"><a href="img/a3-normal-tooltip.jpg"><img src="img/t/a3-normal-tooltip.jpg" srcset="img/t/a3-normal-tooltip.jpg 800w, img/a3-normal-tooltip.jpg 1920w" sizes="(max-width: 900px) 100vw, 1000px" width="1920" height="1080" loading="lazy" alt="A shop on the controller layout, with a Thieves&#x27; Tools tooltip ending in Astarion"></a><figcaption>Normal, on a controller.</figcaption></figure></div>
+    <div><figure class="shot"><a href="img/a3-normal-tooltip.jpg"><picture><source type="image/webp" srcset="img/w/a3-normal-tooltip-480.webp 480w, img/w/a3-normal-tooltip-800.webp 800w, img/w/a3-normal-tooltip-1280.webp 1280w, img/w/a3-normal-tooltip-1920.webp 1920w" sizes="(max-width: 900px) 100vw, (max-width: 1272px) 62vw, 760px"><img src="img/t/a3-normal-tooltip.jpg" sizes="(max-width: 900px) 100vw, (max-width: 1272px) 62vw, 760px" width="1920" height="1080" loading="lazy" decoding="async" alt="A shop on the controller layout, with a Thieves&#x27; Tools tooltip ending in Astarion"></picture></a><figcaption>Normal, on a controller.</figcaption></figure></div>
   </div>
 </section>
 
 <section id="map">
   <h2>Map pins</h2>
   <p>Pins only appear within 160 metres of your party, so the map never floods. Named pins are loot. Pick the item up or open its chest, and the pin is gone. Extensive marks the story's steps as well. Minimal has no pins.</p>
-  <figure class="shot"><a href="img/a1-normal-map.jpg"><img src="img/t/a1-normal-map.jpg" srcset="img/t/a1-normal-map.jpg 800w, img/a1-normal-map.jpg 1920w" sizes="(max-width: 900px) 100vw, 1000px" width="1920" height="1080" loading="lazy" alt="An Act 1 map with named loot pins such as Gloves of Power"></a><figcaption>Normal, in Act 1.</figcaption></figure>
-  <div class="pair">
-    <figure class="shot"><a href="img/pin-before.jpg"><img src="img/t/pin-before.jpg" srcset="img/t/pin-before.jpg 800w, img/pin-before.jpg 1040w" sizes="(max-width: 900px) 100vw, 1000px" width="1040" height="480" loading="lazy" alt="A map with a Gloves of Power pin"></a><figcaption>Before you take the gloves.</figcaption></figure>
-    <figure class="shot"><a href="img/pin-after.jpg"><img src="img/t/pin-after.jpg" srcset="img/t/pin-after.jpg 800w, img/pin-after.jpg 1040w" sizes="(max-width: 900px) 100vw, 1000px" width="1040" height="480" loading="lazy" alt="The same map without the pin"></a><figcaption>After.</figcaption></figure>
+  <div class="row n2">
+    <figure class="shot"><a href="img/a1-normal-map.jpg"><picture><source type="image/webp" srcset="img/w/a1-normal-map-480.webp 480w, img/w/a1-normal-map-800.webp 800w, img/w/a1-normal-map-1280.webp 1280w, img/w/a1-normal-map-1920.webp 1920w" sizes="(max-width: 900px) 100vw, (max-width: 1272px) 62vw, 760px"><img src="img/t/a1-normal-map.jpg" sizes="(max-width: 900px) 100vw, (max-width: 1272px) 62vw, 760px" width="1920" height="1080" loading="lazy" decoding="async" alt="An Act 1 map with named loot pins such as Gloves of Power"></picture></a><figcaption>Normal, in Act 1.</figcaption></figure>
+    <div>
+      <div class="row n2" data-wipe="Slide between before and after">
+      <figure class="shot"><a href="img/pin-before.jpg"><picture><source type="image/webp" srcset="img/w/pin-before-480.webp 480w, img/w/pin-before-800.webp 800w, img/w/pin-before-1040.webp 1040w" sizes="(max-width: 640px) 100vw, (max-width: 1272px) 50vw, 620px"><img src="img/t/pin-before.jpg" sizes="(max-width: 640px) 100vw, (max-width: 1272px) 50vw, 620px" width="1040" height="480" loading="lazy" decoding="async" alt="A map with a Gloves of Power pin"></picture></a><figcaption>Before you take the gloves.</figcaption></figure>
+      <figure class="shot"><a href="img/pin-after.jpg"><picture><source type="image/webp" srcset="img/w/pin-after-480.webp 480w, img/w/pin-after-800.webp 800w, img/w/pin-after-1040.webp 1040w" sizes="(max-width: 640px) 100vw, (max-width: 1272px) 50vw, 620px"><img src="img/t/pin-after.jpg" sizes="(max-width: 640px) 100vw, (max-width: 1272px) 50vw, 620px" width="1040" height="480" loading="lazy" decoding="async" alt="The same map without the pin"></picture></a><figcaption>After.</figcaption></figure>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="warnings">
   <h2>Warnings</h2>
   <div class="split">
-    <div><details class="gate"><summary><span>Hidden: Act 3 place and quest</span><span class="show">Show screenshot</span></summary><figure class="shot"><a href="img/a3-normal-exit.jpg"><img src="img/t/a3-normal-exit.jpg" srcset="img/t/a3-normal-exit.jpg 800w, img/a3-normal-exit.jpg 1920w" sizes="(max-width: 900px) 100vw, 1000px" width="1920" height="1080" loading="lazy" alt="A dock with a notice reading You may not be back, naming a quest that&#x27;s still open"></a><figcaption>Normal, in Act 3.</figcaption></figure></details></div>
+    <div><details class="gate"><summary><span class="seal"></span><span class="why"><span class="hid">Hidden: </span>Act 3 place and quest</span><span class="show">Show screenshot</span><span class="hide">Hide</span></summary><div class="gate-body"><figure class="shot"><a href="img/a3-normal-exit.jpg"><picture><source type="image/webp" srcset="img/w/a3-normal-exit-480.webp 480w, img/w/a3-normal-exit-800.webp 800w, img/w/a3-normal-exit-1280.webp 1280w, img/w/a3-normal-exit-1920.webp 1920w" sizes="(max-width: 1272px) 100vw, 1240px"><img src="img/t/a3-normal-exit.jpg" sizes="(max-width: 1272px) 100vw, 1240px" width="1920" height="1080" loading="lazy" decoding="async" alt="A dock with a notice reading You may not be back, naming a quest that&#x27;s still open"></picture></a><figcaption>Normal, in Act 3.</figcaption></figure></div></details></div>
     <div>
       <h3>Points of no return</h3>
       <p>Near one of the 7 exits, each open quest you would lose comes up as a notice, one every few seconds. Minimal and Normal only name quests you've already accepted. What becomes of them, they don't say.</p>
     </div>
   </div>
   <div class="split">
-    <div><figure class="shot"><a href="img/a1-minimal-camp-warning.jpg"><img src="img/t/a1-minimal-camp-warning.jpg" srcset="img/t/a1-minimal-camp-warning.jpg 800w, img/a1-minimal-camp-warning.jpg 1920w" sizes="(max-width: 900px) 100vw, 1000px" width="1920" height="1080" loading="lazy" alt="Camp with a notice reading Don&#x27;t rest or leave yet: Rolan needs you now"></a><figcaption>The wording is real. The trigger was forced for testing - Rolan belongs to Act 2.</figcaption></figure></div>
+    <div><details class="gate"><summary><span class="seal"></span><span class="why"><span class="hid">Hidden: </span>Act 2 story</span><span class="show">Show screenshot</span><span class="hide">Hide</span></summary><div class="gate-body"><figure class="shot"><a href="img/a1-minimal-camp-warning.jpg"><picture><source type="image/webp" srcset="img/w/a1-minimal-camp-warning-480.webp 480w, img/w/a1-minimal-camp-warning-800.webp 800w, img/w/a1-minimal-camp-warning-1280.webp 1280w, img/w/a1-minimal-camp-warning-1920.webp 1920w" sizes="(max-width: 1272px) 100vw, 1240px"><img src="img/t/a1-minimal-camp-warning.jpg" sizes="(max-width: 1272px) 100vw, 1240px" width="1920" height="1080" loading="lazy" decoding="async" alt="Camp with a notice reading Rolan needs you now. Neither rest nor leave."></picture></a><figcaption>The wording is real. The trigger was forced for testing - Rolan belongs to Act 2.</figcaption></figure></div></details></div>
     <div>
       <h3>Camp warnings</h3>
       <p>Go to camp while a long rest would cost you someone, or a quest, and a warning waits for the arrival banner to pass. Then it speaks. Then it speaks again. There are 16 of these. Only Extensive says what would happen.</p>
@@ -123,6 +152,7 @@
 
 </main>
 <footer class="foot">
+  <nav aria-label="Footer"><a href="tiers.html">Tiers</a><a href="in-game.html">In the game</a><a href="screenshots.html">Screenshots</a><a href="install.html">Docs</a></nav>
   <p>Unofficial fan project, not affiliated with Larian Studios. Baldur's Gate 3 and its screenshots are &copy; Larian Studios. <a href="credits.html">Credits and licences</a>.</p>
 </footer>
 </body>

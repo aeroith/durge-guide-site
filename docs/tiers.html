@@ -1,20 +1,31 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The three tiers: Durge Guide</title>
 <meta name="description" content="What Durge Guide shows at Minimal, Normal and Extensive.">
+<meta name="theme-color" content="#0b0506">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Durge Guide">
 <meta property="og:title" content="The three tiers: Durge Guide">
 <meta property="og:description" content="What Durge Guide shows at Minimal, Normal and Extensive.">
-<meta property="og:image" content="img/hero-normal.jpg">
+<meta property="og:url" content="https://aeroith.github.io/durge-guide-site/tiers.html">
+<meta property="og:image" content="https://aeroith.github.io/durge-guide-site/img/hero-normal.jpg">
+<meta property="og:image:width" content="1880">
+<meta property="og:image:height" content="1058">
+<meta property="og:image:alt" content="A short note in the game's side popup at Waukeen's Rest">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://aeroith.github.io/durge-guide-site/tiers.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23b3202e' d='M12 2c4 6 7 9.500 7 13a7 7 0 0 1-14 0c0-3.500 3-7 7-13z'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@500;700&family=Grenze:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="preload" href="fonts/grenze.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/grenze-gotisch.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="print.css" media="print">
+<script src="site.js" defer></script>
 </head>
-<body>
+<body class="on-tiers">
 <a class="skip" href="#main">Skip to content</a>
 <header class="top">
   <a class="mark" href="index.html">Durge Guide</a>
@@ -27,54 +38,85 @@
   <p>You choose when you install. The words are bound into the game's language file, so changing your mind means rebuilding the mod with the game closed. Your saves survive it.</p>
 </div>
 
-<section>
+<section class="decide" data-tier="normal">
+  <div class="picks">
+    <h2>Which one to pick</h2>
+    <div class="pick" data-t="minimal"><p><b>Minimal</b> is for those who fear one thing: missing something for good. Most days, you won't know it's there.</p></div>
+    <div class="pick" data-t="normal"><p><b>Normal</b> suits a first run. It tells you where to go and warns you of what could be lost. It never says why. In conversation you see a star or a red mark, and what the line leads to is yours to find out.</p></div>
+    <div class="pick" data-t="extensive"><p><b>Extensive</b> is for a second run, or for those who want the numbers. A short note names the rolls and the loot. Your journal keeps the rest. Expect spoilers.</p></div>
+  </div>
   <div class="table">
-    <table>
-      <thead><tr><th scope="col"><span hidden>What you get</span></th><th scope="col">Minimal</th><th scope="col" class="on">Normal</th><th scope="col">Extensive</th></tr></thead>
+    <table class="compare">
+      <caption class="vh">What you get at each tier</caption>
+      <thead><tr><th scope="col"><span class="vh">What you get</span></th><th scope="col">Minimal</th><th scope="col">Normal</th><th scope="col">Extensive</th></tr></thead>
       <tbody>
-        <tr><th scope="row">The idea</th><td>Never lose a thing by accident</td><td class="on">Steered, not spoiled</td><td>The numbers, and more on request</td></tr>
-        <tr><th scope="row">Notes on the ground</th><td><b>151</b>Only what could slip away</td><td class="on"><b>1,144</b>What to do, and what could slip away</td><td><b>1,144</b>Also rolls, party advice, loot and tips</td></tr>
-        <tr><th scope="row">Dialogue tags</th><td><b>None</b></td><td class="on"><b>1,497</b>A mark. No words.</td><td><b>1,497</b>A mark, and what follows your click</td></tr>
-        <tr><th scope="row">Quest lines</th><td><b>215</b>How urgent. Nothing more.</td><td class="on"><b>831</b>A short nudge</td><td><b>833</b>Full advice, deadlines named</td></tr>
-        <tr><th scope="row">Item tooltips</th><td><b>None</b></td><td class="on"><b>257</b>Who it suits</td><td><b>311</b>Who it suits, and why</td></tr>
-        <tr><th scope="row">Map pins</th><td><b>None</b></td><td class="on"><b>212</b>Loot and secrets</td><td><b>366</b>Story steps as well</td></tr>
-        <tr><th scope="row">Treasure glints</th><td><b>None</b></td><td class="on"><b>107</b></td><td><b>107</b></td></tr>
-        <tr><th scope="row">Points of no return</th><td><b>7</b>Names your open quests</td><td class="on"><b>7</b>Names your open quests</td><td><b>7</b>Says what you stand to lose</td></tr>
-        <tr><th scope="row">Camp warnings</th><td><b>16</b>No outcome given</td><td class="on"><b>16</b>No outcome given</td><td><b>16</b>Says what will happen</td></tr>
-        <tr><th scope="row">More in the journal</th><td><b>None</b></td><td class="on"><b>441</b>A few lines that give nothing away</td><td><b>705</b>Other rolls, other ways in, what it costs</td></tr>
+        <tr><th scope="row">The idea</th><td>Never lose a thing by accident</td><td>Steered, not spoiled</td><td>The numbers, and more on request</td></tr>
+        <tr><th scope="row">Notes on the ground</th><td><b>150</b>Only what could slip away</td><td><b>1,087</b>What to do, and what could slip away</td><td><b>1,087</b>Also rolls, party advice, loot and tips</td></tr>
+        <tr><th scope="row">Dialogue tags</th><td class="none"><b>None</b></td><td><b>1,496</b>A mark. No words.</td><td><b>1,496</b>A mark, and what follows your click</td></tr>
+        <tr><th scope="row">Quest lines</th><td><b>215</b>How urgent. Nothing more.</td><td><b>831</b>A short nudge</td><td><b>833</b>Full advice, deadlines named</td></tr>
+        <tr><th scope="row">Item tooltips</th><td class="none"><b>None</b></td><td><b>257</b>Who it suits</td><td><b>311</b>Who it suits, and why</td></tr>
+        <tr><th scope="row">Map pins</th><td class="none"><b>None</b></td><td><b>208</b>Loot and secrets</td><td><b>358</b>Story steps as well</td></tr>
+        <tr><th scope="row">Treasure glints</th><td class="none"><b>None</b></td><td><b>102</b></td><td><b>102</b></td></tr>
+        <tr><th scope="row">Points of no return</th><td><b>7</b>Names your open quests</td><td><b>7</b>Names your open quests</td><td><b>7</b>Says what you stand to lose</td></tr>
+        <tr><th scope="row">Camp warnings</th><td><b>16</b>No outcome given</td><td><b>16</b>No outcome given</td><td><b>16</b>Says what will happen</td></tr>
+        <tr><th scope="row">More in the journal</th><td class="none"><b>None</b></td><td><b>454</b>A few lines that give nothing away</td><td><b>721</b>Other rolls, other ways in, what it costs</td></tr>
       </tbody>
     </table>
   </div>
-</section>
-
-<section>
-  <h2>Which one to pick</h2>
-  <div class="split">
-    <div>
-      <p><b>Normal</b> suits a first run. It tells you where to go and warns you of what could be lost. It never says why. In conversation you see a star or a red mark, and what the line leads to is yours to find out.</p>
-      <p><b>Minimal</b> is for those who fear one thing: missing something for good. Most days, you won't know it's there.</p>
-      <p><b>Extensive</b> is for a second run, or for those who want the numbers. A short note names the rolls and the loot. Your journal keeps the rest. Expect spoilers.</p>
-    </div>
-    <div>
-      <h3>Even Extensive holds its tongue</h3>
-      <p>A dialogue tag only says what happens right after you click. If the price comes due much later, it says 'There will be a price, later' or 'This will repay you, in time', and nothing else. 145 lines keep their secrets this way.</p>
-    </div>
+  <div class="note tongue">
+    <h3>Even Extensive holds its tongue</h3>
+    <p>A dialogue tag only says what happens right after you click. If the price comes due much later, it says 'There will be a price, later' or 'This will repay you, in time', and nothing else. 145 lines keep their secrets this way.</p>
   </div>
 </section>
 
 <section>
   <h2>The same spot at each tier</h2>
-  <figure class="shot"><a href="img/compare-notes.jpg"><img src="img/t/compare-notes.jpg" srcset="img/t/compare-notes.jpg 800w, img/compare-notes.jpg 1954w" sizes="(max-width: 900px) 100vw, 1000px" width="1954" height="706" loading="lazy" alt="The Waukeen&#x27;s Rest note at each tier. Minimal has one line, Normal has two, and Extensive has two with the next note below."></a><figcaption>A note in Act 1. Minimal says what to finish. Extensive names the waypoint and the fire's price. An earlier cut of the wording.</figcaption></figure>
-  <div class="split flip">
-    <div><figure class="shot"><a href="img/compare-tooltips.jpg"><img src="img/t/compare-tooltips.jpg" srcset="img/t/compare-tooltips.jpg 800w, img/compare-tooltips.jpg 1088w" sizes="(max-width: 900px) 100vw, 1000px" width="1088" height="806" loading="lazy" alt="The Thieves&#x27; Tools tooltip at Normal and Extensive. Normal only names Astarion. Extensive adds a sentence about why."></a><figcaption>Tooltips. A name, or a name and a reason.</figcaption></figure></div>
-    <div><figure class="shot"><a href="img/compare-map-pins.jpg"><img src="img/t/compare-map-pins.jpg" srcset="img/t/compare-map-pins.jpg 800w, img/compare-map-pins.jpg 2560w" sizes="(max-width: 900px) 100vw, 1000px" width="2560" height="1029" loading="lazy" alt="The same Act 1 map at Normal and Extensive. Extensive has more pins along the top edge."></a><figcaption>Map pins. Extensive marks the story's path as well.</figcaption></figure></div>
+  <figure class="set">
+    <div class="row n3">
+    <figure class="shot"><a href="img/note-minimal.jpg"><picture><source type="image/webp" srcset="img/w/note-minimal-480.webp 480w, img/w/note-minimal-630.webp 630w" sizes="(max-width: 640px) 100vw, (max-width: 1272px) 33vw, 410px"><img src="img/t/note-minimal.jpg" sizes="(max-width: 640px) 100vw, (max-width: 1272px) 33vw, 410px" width="630" height="370" loading="lazy" decoding="async" alt="The Waukeen&#x27;s Rest note at Minimal, with one line"></picture></a><figcaption>Minimal</figcaption></figure>
+    <figure class="shot"><a href="img/note-normal.jpg"><picture><source type="image/webp" srcset="img/w/note-normal-480.webp 480w, img/w/note-normal-630.webp 630w" sizes="(max-width: 640px) 100vw, (max-width: 1272px) 33vw, 410px"><img src="img/t/note-normal.jpg" sizes="(max-width: 640px) 100vw, (max-width: 1272px) 33vw, 410px" width="630" height="370" loading="lazy" decoding="async" alt="The same note at Normal, with two lines and a footer"></picture></a><figcaption>Normal</figcaption></figure>
+    <figure class="shot"><a href="img/note-extensive.jpg"><picture><source type="image/webp" srcset="img/w/note-extensive-480.webp 480w, img/w/note-extensive-630.webp 630w" sizes="(max-width: 640px) 100vw, (max-width: 1272px) 33vw, 410px"><img src="img/t/note-extensive.jpg" sizes="(max-width: 640px) 100vw, (max-width: 1272px) 33vw, 410px" width="630" height="370" loading="lazy" decoding="async" alt="The same note at Extensive, with two longer lines and a footer"></picture></a><figcaption>Extensive</figcaption></figure>
+    </div>
+    <figcaption>A note in Act 1. Minimal says what to finish. Extensive names the waypoint and the fire's price. An earlier cut of the wording.</figcaption>
+  </figure>
+  <div class="split even">
+    <figure class="set">
+      <div class="row n2">
+      <figure class="shot"><a href="img/tooltip-normal.jpg"><picture><source type="image/webp" srcset="img/w/tooltip-normal-480.webp 480w, img/w/tooltip-normal-520.webp 520w" sizes="(max-width: 640px) 100vw, 240px"><img src="img/t/tooltip-normal.jpg" sizes="(max-width: 640px) 100vw, 240px" width="520" height="730" loading="lazy" decoding="async" alt="The Thieves&#x27; Tools tooltip at Normal. It only names Astarion."></picture></a><figcaption>Normal</figcaption></figure>
+      <figure class="shot"><a href="img/tooltip-extensive.jpg"><picture><source type="image/webp" srcset="img/w/tooltip-extensive-480.webp 480w, img/w/tooltip-extensive-520.webp 520w" sizes="(max-width: 640px) 100vw, 240px"><img src="img/t/tooltip-extensive.jpg" sizes="(max-width: 640px) 100vw, 240px" width="520" height="730" loading="lazy" decoding="async" alt="The Thieves&#x27; Tools tooltip at Extensive, with a sentence about why"></picture></a><figcaption>Extensive</figcaption></figure>
+      </div>
+      <figcaption>Tooltips. A name, or a name and a reason.</figcaption>
+    </figure>
+    <figure class="set">
+      <div class="row n2" data-wipe="Slide between Normal and Extensive">
+      <figure class="shot"><a href="img/map-top-normal.jpg"><picture><source type="image/webp" srcset="img/w/map-top-normal-480.webp 480w, img/w/map-top-normal-780.webp 780w" sizes="(max-width: 640px) 100vw, (max-width: 1272px) 50vw, 620px"><img src="img/t/map-top-normal.jpg" sizes="(max-width: 640px) 100vw, (max-width: 1272px) 50vw, 620px" width="780" height="530" loading="lazy" decoding="async" alt="The top of an Act 1 map at Normal"></picture></a><figcaption>Normal</figcaption></figure>
+      <figure class="shot"><a href="img/map-top-extensive.jpg"><picture><source type="image/webp" srcset="img/w/map-top-extensive-480.webp 480w, img/w/map-top-extensive-780.webp 780w" sizes="(max-width: 640px) 100vw, (max-width: 1272px) 50vw, 620px"><img src="img/t/map-top-extensive.jpg" sizes="(max-width: 640px) 100vw, (max-width: 1272px) 50vw, 620px" width="780" height="530" loading="lazy" decoding="async" alt="The same stretch of map at Extensive, with more pins along the top edge"></picture></a><figcaption>Extensive</figcaption></figure>
+      </div>
+      <figcaption>Map pins. Extensive marks the story's path as well.</figcaption>
+    </figure>
   </div>
-  <details class="gate"><summary><span>Hidden: Act 3 conversation</span><span class="show">Show screenshot</span></summary><figure class="shot"><a href="img/compare-dialogue.jpg"><img src="img/t/compare-dialogue.jpg" srcset="img/t/compare-dialogue.jpg 800w, img/compare-dialogue.jpg 1912w" sizes="(max-width: 900px) 100vw, 1000px" width="1912" height="1516" loading="lazy" alt="Danthelon&#x27;s greeting at each tier. Minimal has no tag, Normal has a star, and Extensive adds what the line does."></a><figcaption>Dialogue. Nothing, then a mark, then a mark with words.</figcaption></figure></details>
-  <details class="gate"><summary><span>Hidden: early Dark Urge story</span><span class="show">Show screenshot</span></summary><figure class="shot"><a href="img/compare-quest-lines.jpg"><img src="img/t/compare-quest-lines.jpg" srcset="img/t/compare-quest-lines.jpg 800w, img/compare-quest-lines.jpg 2560w" sizes="(max-width: 900px) 100vw, 1000px" width="2560" height="409" loading="lazy" alt="The Urge quest at each tier. Minimal only says Time-limited."></a><figcaption>Quest lines. Minimal only says how urgent a step is.</figcaption></figure></details>
+  <details class="gate">
+    <summary><span class="seal"></span><span class="why"><span class="hid">Hidden: </span>Act 3 conversation</span><span class="show">Show dialogue tags at each tier</span><span class="hide">Hide</span></summary>
+    <div class="gate-body">
+    <figure class="shot"><div class="pan" style="--pan:900px" tabindex="0" role="group" aria-label="Scroll sideways to see all of it"><a href="img/compare-dialogue.jpg"><picture><source type="image/webp" srcset="img/w/compare-dialogue-480.webp 480w, img/w/compare-dialogue-800.webp 800w, img/w/compare-dialogue-1280.webp 1280w, img/w/compare-dialogue-1912.webp 1912w" sizes="(max-width: 1272px) 100vw, 1240px"><img src="img/t/compare-dialogue.jpg" sizes="(max-width: 1272px) 100vw, 1240px" width="1912" height="1516" loading="lazy" decoding="async" alt="Danthelon&#x27;s greeting at each tier. Minimal has no tag, Normal has a star, and Extensive adds what the line does."></picture></a></div><figcaption>Dialogue. Nothing, then a mark, then a mark with words.</figcaption></figure>
+    </div>
+  </details>
+  <details class="gate">
+    <summary><span class="seal"></span><span class="why"><span class="hid">Hidden: </span>early Dark Urge story</span><span class="show">Show quest lines at each tier</span><span class="hide">Hide</span></summary>
+    <div class="gate-body">
+    <figure class="shot"><div class="pan" style="--pan:1800px" tabindex="0" role="group" aria-label="Scroll sideways to see all of it"><a href="img/compare-quest-lines.jpg"><picture><source type="image/webp" srcset="img/w/compare-quest-lines-480.webp 480w, img/w/compare-quest-lines-800.webp 800w, img/w/compare-quest-lines-1280.webp 1280w, img/w/compare-quest-lines-1920.webp 1920w, img/w/compare-quest-lines-1920.webp 1920w" sizes="(max-width: 1272px) 100vw, 1240px"><img src="img/t/compare-quest-lines.jpg" sizes="(max-width: 1272px) 100vw, 1240px" width="2560" height="409" loading="lazy" decoding="async" alt="The Urge quest at each tier. Minimal only says Time-limited."></picture></a></div><figcaption>Quest lines. Minimal only says how urgent a step is.</figcaption></figure>
+    </div>
+  </details>
+  <div class="go last">
+    <a class="btn" href="compatibility.html">See what's been tested</a>
+    <a class="more" href="in-game.html">See it in the game</a>
+    <p class="status">There is no public download yet. Only the native Linux build has been tested.</p>
+  </div>
 </section>
 
 </main>
 <footer class="foot">
+  <nav aria-label="Footer"><a href="tiers.html">Tiers</a><a href="in-game.html">In the game</a><a href="screenshots.html">Screenshots</a><a href="install.html">Docs</a></nav>
   <p>Unofficial fan project, not affiliated with Larian Studios. Baldur's Gate 3 and its screenshots are &copy; Larian Studios. <a href="credits.html">Credits and licences</a>.</p>
 </footer>
 </body>

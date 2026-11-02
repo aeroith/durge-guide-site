@@ -1,58 +1,74 @@
 <!-- Durge Guide: a Baldur's Gate 3 mod | A mod for Baldur's Gate 3. A guide settles into the game's own screens, and tells you only as much as you allow. | home -->
-<section class="hero">
-  <h1>How much do you want to know?</h1>
-  <p class="lede">Durge Guide is a mod for Baldur's Gate 3. A voice settles into the game's own screens, knowing what lies behind every door. It tells you only as much as you allow.</p>
-  <div class="switch">
-    <input type="radio" name="tier" id="t-minimal" aria-label="Minimal">
-    <input type="radio" name="tier" id="t-normal" aria-label="Normal" checked>
-    <input type="radio" name="tier" id="t-extensive" aria-label="Extensive">
-    <div class="tabs">
-      <label for="t-minimal">Minimal</label>
-      <label for="t-normal">Normal</label>
-      <label for="t-extensive">Extensive</label>
+<section class="hero" aria-labelledby="ask">
+  <div class="hero-col">
+    <h1 id="ask">How much do you want to know?</h1>
+    <p class="lede">Durge Guide is a mod for a first Dark Urge run in Baldur's Gate 3. A voice settles into the game's own screens, knowing what lies behind every door. It tells you only as much as you allow.</p>
+    <div class="answer" role="radiogroup" aria-labelledby="ask">
+      <input type="radio" name="tier" id="t-minimal" value="minimal" autocomplete="off">
+      <input type="radio" name="tier" id="t-normal" value="normal" autocomplete="off" checked>
+      <input type="radio" name="tier" id="t-extensive" value="extensive" autocomplete="off">
+      <p class="keys"><span class="fine">Choose a line.</span><span class="focus">Press 1, 2 or 3.</span><span class="touch">Tap a line to answer.</span></p>
+      <div class="lines">
+        <label for="t-minimal"><span class="n">1.</span><b>Minimal</b> - Never lose a thing by accident</label>
+        <label for="t-normal"><span class="n">2.</span><b>Normal</b> - Steered, not spoiled</label>
+        <label for="t-extensive"><span class="n">3.</span><b>Extensive</b> - The numbers, and more on request. Expect spoilers.</label>
+      </div>
+      <div class="says" aria-live="polite">
+        <p class="minimal">It stays silent until something could be lost for good. Even then, it won't say how.</p>
+        <p class="normal">It points the way and names what you could miss. What waits at the end of the road is your own affair.</p>
+        <p class="extensive">It names the rolls, the loot and who will approve. The rest waits in your journal. Some things can't be unread. An earlier cut of the wording.</p>
+      </div>
+      <div class="stage">
+        [[hero minimal | Waukeen's Rest at the Minimal tier. The note at the top left has one line about what you could miss. | Minimal: Waukeen's Rest]]
+        [[hero normal | Waukeen's Rest at the Normal tier. The note says what to do and what you could miss, and points to your journal. | Normal: Waukeen's Rest]]
+        [[hero extensive | Waukeen's Rest at the Extensive tier. Two short notes give the steps, a roll and what could slip away, and point to your journal. | Extensive: Waukeen's Rest (earlier cut)]]
+      </div>
     </div>
-    <div class="stage">
-      <img class="minimal" src="img/hero-minimal.jpg" width="1880" height="1058" alt="Waukeen's Rest at the Minimal tier. The note at the top left has one line about what you could miss.">
-      <img class="normal" src="img/hero-normal.jpg" width="1880" height="1058" alt="Waukeen's Rest at the Normal tier. The note says what to do and what you could miss, and points to your journal.">
-      <img class="extensive" src="img/hero-extensive.jpg" width="1880" height="1058" alt="Waukeen's Rest at the Extensive tier. Two short notes give the steps, a roll and what could slip away, and point to your journal.">
-    </div>
-    <div class="says">
-      <p class="minimal">It stays silent until something could be lost for good. Even then, it won't say how.</p>
-      <p class="normal">It points the way and names what you could miss. What waits at the end of the road is your own affair.</p>
-      <p class="extensive">It names the rolls, the loot and who will approve. The rest waits in your journal. Some things can't be unread.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="split">
-    <div>[[shot a1-normal-grymforge | Grymforge with a short note at the top left about a cave-in | The Underdark. The note is short, and says little of what's coming.]]</div>
-    <div>
-      <h2>It hides where you already look</h2>
-      <p>There is no overlay and no new menu. Only the game's own screens, saying a little more than they did.</p>
-      <ul>
-        <li><a href="in-game.html#notes">A note</a> where you stand, in the game's side popup.</li>
-        <li><a href="in-game.html#quests">A line</a> beneath a quest step.</li>
-        <li><a href="in-game.html#dialogue">A mark</a> beside a dialogue choice.</li>
-        <li><a href="in-game.html#items">A word</a> in a tooltip, on who should wear it.</li>
-        <li><a href="in-game.html#map">A pin</a> on your map. It's gone once you take what it marked.</li>
-        <li><a href="in-game.html#warnings">A warning</a> before a door closes behind you.</li>
-      </ul>
+    <div class="go">
+      <a class="btn" href="tiers.html">Compare the three tiers</a>
+      <a class="more" href="in-game.html">See it in the game</a>
+      <p class="status">There is no public download yet. Only the native Linux build has been tested.</p>
     </div>
   </div>
 </section>
 
-<section>
-  <div class="split even">
-    <div>
-      <h2>It has someone in mind</h2>
-      <p>A first Dark Urge playthrough. An Open Hand Monk, travelling with Astarion, Karlach and Shadowheart, with a few item mods in the pack. It follows you through all three acts.</p>
-      <p>Bring other companions and the notes, pins and warnings still work. The party advice will simply name people who aren't there.</p>
-    </div>
-    <div>
-      <h2>You can't have it yet</h2>
-      <p>There is no public download. It runs on the native Linux build of the game, and has been tested on real saves in Acts 1 and 2. Act 3 has only been seen through a test jump.</p>
-      <p><a href="compatibility.html">See what's been tested</a>.</p>
-    </div>
+<section class="hides">
+  <div class="proofs">
+    [[art proof-first | proof-first-note | The Durge Guide box in the game's side popup. It explains its marks and points to the journal and the map. | Take a few steps. The first box explains your tier.]]
+    <figure class="shot proof"><img src="img/proof-word.jpg" width="340" height="131" loading="lazy" decoding="async" alt="The end of a Thieves' Tools tooltip, reading For Astarion"><figcaption>A word in a tooltip.</figcaption></figure>
+    <figure class="shot proof"><img src="img/proof-pin.jpg" width="340" height="131" loading="lazy" decoding="async" alt="A pin on the map, labelled Gloves of Power"><figcaption>A pin on your map.</figcaption></figure>
+  </div>
+  <div class="hides-copy">
+    <h2>It hides where you already look</h2>
+    <p>There is no overlay and no new menu. Only the game's own screens, saying a little more than they did.</p>
+    <ul class="ledger">
+      <li><a href="in-game.html#notes">A note</a> where you stand, in the game's side popup.</li>
+      <li><a href="in-game.html#quests">A line</a> beneath a quest step.</li>
+      <li><a href="in-game.html#dialogue">A mark</a> beside a dialogue choice.</li>
+      <li><a href="in-game.html#items">A word</a> in a tooltip, on who should wear it.</li>
+      <li><a href="in-game.html#map">A pin</a> on your map. It's gone once you take what it marked.</li>
+      <li><a href="in-game.html#warnings">A warning</a> before a door closes behind you.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="someone">
+  <div class="party" role="img" aria-label="The game's party portraits: a white Dragonborn, Shadowheart, Astarion and Karlach">
+    <img src="img/party-1.jpg" width="98" height="143" loading="lazy" decoding="async" alt=""><img src="img/party-2.jpg" width="98" height="143" loading="lazy" decoding="async" alt=""><img src="img/party-3.jpg" width="98" height="143" loading="lazy" decoding="async" alt=""><img src="img/party-4.jpg" width="98" height="143" loading="lazy" decoding="async" alt="">
+  </div>
+  <div>
+    <h2>It has someone in mind</h2>
+    <p>A first Dark Urge playthrough. An Open Hand Monk, travelling with Astarion, Karlach and Shadowheart, with a few item mods in the pack. It follows you through all three acts.</p>
+    <p>Bring other companions and the notes, pins and warnings still work. The party advice will simply name people who aren't there.</p>
+  </div>
+</section>
+
+<section class="yet">
+  <span class="seal"></span>
+  <h2>You can't have it yet</h2>
+  <p>There is no public download. It runs on the native Linux build of the game, and has been tested on real saves in Acts 1 and 2. Act 3 has only been seen through a test jump.</p>
+  <div class="go">
+    <a class="btn" href="compatibility.html">See what's been tested</a>
+    <a class="more" href="how-it-works.html">How it works, for modders</a>
   </div>
 </section>

@@ -1,13 +1,17 @@
 <!-- In the game | Every way Durge Guide appears in Baldur's Gate 3: notes, journal lines, dialogue tags, tooltips, map pins and warnings. | in-game -->
 <div class="page-head">
   <h1>In the game</h1>
-  <p>These are real captures. Anything from later in the story stays hidden until you ask for it. The party in the Act 3 shots is level 2, brought there by a test jump. It shows. A shot marked 'earlier cut' was taken just before the notes' last pass, so its wording is a little off.</p>
+  <p>These are real captures. Anything from later in the story stays hidden until you ask for it. The party in the Act 3 shots is level 2, brought there by a test jump. It shows. A shot marked 'earlier cut' was taken just before the notes' last pass, so its wording is a little off. Select any shot to see it at full size.</p>
 </div>
+
+<nav class="strip tabs-sticky" aria-label="On this page" data-spy>
+  <a href="#notes">Notes</a><a href="#notices">Notices</a><a href="#glints">Glints</a><a href="#journal">Archive</a><a href="#quests">Quests</a><a href="#dialogue">Dialogue</a><a href="#items">Tooltips</a><a href="#map">Map pins</a><a href="#warnings">Warnings</a>
+</nav>
 
 <section id="notes">
   <h2>Where you stand</h2>
   <div class="split">
-    <div>[[shot hero-extensive | Waukeen's Rest with two short notes at the top left, each ending in There's more in your journal | Extensive, in Act 1. An earlier cut of the wording.]]</div>
+    <div>[[art hero-normal | hero-note-normal | Waukeen's Rest with a short note at the top left, ending in There's more in your journal | Normal, in Act 1.]]</div>
     <div>
       <p>Walk near the right spot and the game's own side popup opens at the top left. Within ten seconds, it fades. On a controller, it offers a Dismiss button.</p>
       <p>A note says what matters now, in a line or two. If there's more, its footer says so: 'There's more in your journal'. Many notes have nothing more to say, and no footer.</p>
@@ -15,10 +19,10 @@
       <p>Once all of a note's quests are closed, it falls silent.</p>
     </div>
   </div>
-  <div class="pair">
-    [[shot hero-minimal | Waukeen's Rest with a one-line note | Minimal.]]
-    [[shot hero-normal | Waukeen's Rest with a short note and a footer | The same spot at Normal.]]
-  </div>
+  [[row 2]]
+    [[art hero-minimal | hero-note-minimal | Waukeen's Rest with a one-line note | Minimal.]]
+    [[shot hero-extensive | Waukeen's Rest with two short notes at the top left, each with a footer | The same spot at Extensive. An earlier cut of the wording.]]
+  [[/row]]
 </section>
 
 <section id="notices">
@@ -30,7 +34,7 @@
 <section id="glints">
   <h2>Treasure glints</h2>
   <div class="split">
-    <div>[[shot a1-normal-glint | The Risen Road with a burst of white flecks beside a buried chest | White flecks above a buried chest.]]</div>
+    <div>[[split a1-normal-glint | The Risen Road with a burst of white flecks beside a buried chest | White flecks above a buried chest.]]</div>
     <div><p>A hidden treasure sparkles once, the first time you come within 12 metres. There is no box. There is nothing to dismiss. Minimal has no glints.</p></div>
   </div>
 </section>
@@ -38,45 +42,59 @@
 <section id="journal">
   <h2>The notes archive</h2>
   <p>Every note you've reached stays in the journal's Tutorials tab, along with the coordinates from your minimap. At Minimal, it keeps the words you saw on the ground. At Normal, some notes add a few lines that give nothing away. At Extensive, the detail follows, on the notes that earn it.</p>
-  <div class="pair">
-    [[shot a1-normal-journal | The Tutorials tab with a short note and three hints below it | Normal. An earlier cut of the wording.]]
+  [[row 2]]
+    [[art a1-normal-journal | journal-note-normal | The Tutorials tab with a short note and three hints below it | Normal. An earlier cut of the wording.]]
     [[shot a1-extensive-journal | The Tutorials tab with the same note, and the rolls, loot and risks below it | Extensive. An earlier cut of the wording.]]
-  </div>
+  [[/row]]
 </section>
 
 <section id="quests">
   <h2>Quest lines</h2>
   <p>A mark and a line beneath a quest step. At Minimal and Normal, a deadline never names what's coming. It says only 'Time-limited', 'Before your next rest' or 'Before you leave this act'. At Extensive, it names the event.</p>
-  <div class="pair">
-    [[gate Act 2 story | a2-normal-quest | An Act 2 quest with short nudges under each step | Normal.]]
-    [[gate Act 2 story | a2-extensive-quest | The same quest with full advice | Extensive.]]
-  </div>
+  <details class="gate">
+    [[summary Act 2 story | Show 2 screenshots]]
+    <div class="gate-body">
+    [[row 2]]
+    [[shot a2-normal-quest | An Act 2 quest with short nudges under each step | Normal.]]
+    [[shot a2-extensive-quest | The same quest with full advice | Extensive.]]
+    [[/row]]
+    </div>
+  </details>
 </section>
 
 <section id="dialogue">
   <h2>Dialogue tags</h2>
-  <p>A mark at the end of the line, inside the game's own dialogue box. Normal gives you only the mark: a star for a good line, red for one to avoid. Extensive adds what happens the moment you click, and a skull on Dark Urge choices. Minimal leaves your words alone.</p>
-  <div class="pair">
-    [[gate Act 3 conversation | a3-normal-dialogue | A conversation with a star after one line | Normal, on a controller.]]
-    [[gate Act 3 conversation | a3-extensive-dialogue | The same conversation with tags in words | Extensive, on a controller.]]
-  </div>
+  <p>A mark at the end of the line, inside the game's own dialogue box. Normal gives you only the mark: a star [[icon star]] for a good line, red [[icon mark]] for one to avoid. Extensive adds what happens the moment you click, and a skull [[icon skull]] on Dark Urge choices. Minimal leaves your words alone.</p>
+  <details class="gate">
+    [[summary Act 3 conversation | Show 2 screenshots]]
+    <div class="gate-body">
+    [[row 2]]
+    [[shot a3-normal-dialogue | A conversation with a star after one line | Normal, on a controller.]]
+    [[shot a3-extensive-dialogue | The same conversation with tags in words | Extensive, on a controller.]]
+    [[/row]]
+    </div>
+  </details>
 </section>
 
 <section id="items">
   <h2>Item tooltips</h2>
   <div class="split flip">
     <div><p>Notable items end their tooltip with who they suit. On a controller, selecting the item shows it. Minimal leaves tooltips as it found them.</p></div>
-    <div>[[shot a3-normal-tooltip | A shop on the controller layout, with a Thieves' Tools tooltip ending in Astarion | Normal, on a controller.]]</div>
+    <div>[[split a3-normal-tooltip | A shop on the controller layout, with a Thieves' Tools tooltip ending in Astarion | Normal, on a controller.]]</div>
   </div>
 </section>
 
 <section id="map">
   <h2>Map pins</h2>
   <p>Pins only appear within 160 metres of your party, so the map never floods. Named pins are loot. Pick the item up or open its chest, and the pin is gone. Extensive marks the story's steps as well. Minimal has no pins.</p>
-  [[shot a1-normal-map | An Act 1 map with named loot pins such as Gloves of Power | Normal, in Act 1.]]
-  <div class="pair">
-    [[shot pin-before | A map with a Gloves of Power pin | Before you take the gloves.]]
-    [[shot pin-after | The same map without the pin | After.]]
+  <div class="row n2">
+    [[split a1-normal-map | An Act 1 map with named loot pins such as Gloves of Power | Normal, in Act 1.]]
+    <div>
+      [[wipe Slide between before and after]]
+      [[shot pin-before | A map with a Gloves of Power pin | Before you take the gloves.]]
+      [[shot pin-after | The same map without the pin | After.]]
+      [[/wipe]]
+    </div>
   </div>
 </section>
 
@@ -90,7 +108,7 @@
     </div>
   </div>
   <div class="split">
-    <div>[[shot a1-minimal-camp-warning | Camp with a notice reading Don't rest or leave yet: Rolan needs you now | The wording is real. The trigger was forced for testing - Rolan belongs to Act 2.]]</div>
+    <div>[[gate Act 2 story | a1-minimal-camp-warning | Camp with a notice reading Rolan needs you now. Neither rest nor leave. | The wording is real. The trigger was forced for testing - Rolan belongs to Act 2.]]</div>
     <div>
       <h3>Camp warnings</h3>
       <p>Go to camp while a long rest would cost you someone, or a quest, and a warning waits for the arrival banner to pass. Then it speaks. Then it speaks again. There are 16 of these. Only Extensive says what would happen.</p>

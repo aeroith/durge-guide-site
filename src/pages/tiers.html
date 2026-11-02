@@ -4,48 +4,78 @@
   <p>You choose when you install. The words are bound into the game's language file, so changing your mind means rebuilding the mod with the game closed. Your saves survive it.</p>
 </div>
 
-<section>
+<section class="decide" data-tier="normal">
+  <div class="picks">
+    <h2>Which one to pick</h2>
+    <div class="pick" data-t="minimal"><p><b>Minimal</b> is for those who fear one thing: missing something for good. Most days, you won't know it's there.</p></div>
+    <div class="pick" data-t="normal"><p><b>Normal</b> suits a first run. It tells you where to go and warns you of what could be lost. It never says why. In conversation you see a star or a red mark, and what the line leads to is yours to find out.</p></div>
+    <div class="pick" data-t="extensive"><p><b>Extensive</b> is for a second run, or for those who want the numbers. A short note names the rolls and the loot. Your journal keeps the rest. Expect spoilers.</p></div>
+  </div>
   <div class="table">
-    <table>
-      <thead><tr><th scope="col"><span hidden>What you get</span></th><th scope="col">Minimal</th><th scope="col" class="on">Normal</th><th scope="col">Extensive</th></tr></thead>
+    <table class="compare">
+      <caption class="vh">What you get at each tier</caption>
+      <thead><tr><th scope="col"><span class="vh">What you get</span></th><th scope="col">Minimal</th><th scope="col">Normal</th><th scope="col">Extensive</th></tr></thead>
       <tbody>
-        <tr><th scope="row">The idea</th><td>Never lose a thing by accident</td><td class="on">Steered, not spoiled</td><td>The numbers, and more on request</td></tr>
-        <tr><th scope="row">Notes on the ground</th><td><b>151</b>Only what could slip away</td><td class="on"><b>1,144</b>What to do, and what could slip away</td><td><b>1,144</b>Also rolls, party advice, loot and tips</td></tr>
-        <tr><th scope="row">Dialogue tags</th><td><b>None</b></td><td class="on"><b>1,497</b>A mark. No words.</td><td><b>1,497</b>A mark, and what follows your click</td></tr>
-        <tr><th scope="row">Quest lines</th><td><b>215</b>How urgent. Nothing more.</td><td class="on"><b>831</b>A short nudge</td><td><b>833</b>Full advice, deadlines named</td></tr>
-        <tr><th scope="row">Item tooltips</th><td><b>None</b></td><td class="on"><b>257</b>Who it suits</td><td><b>311</b>Who it suits, and why</td></tr>
-        <tr><th scope="row">Map pins</th><td><b>None</b></td><td class="on"><b>212</b>Loot and secrets</td><td><b>366</b>Story steps as well</td></tr>
-        <tr><th scope="row">Treasure glints</th><td><b>None</b></td><td class="on"><b>107</b></td><td><b>107</b></td></tr>
-        <tr><th scope="row">Points of no return</th><td><b>7</b>Names your open quests</td><td class="on"><b>7</b>Names your open quests</td><td><b>7</b>Says what you stand to lose</td></tr>
-        <tr><th scope="row">Camp warnings</th><td><b>16</b>No outcome given</td><td class="on"><b>16</b>No outcome given</td><td><b>16</b>Says what will happen</td></tr>
-        <tr><th scope="row">More in the journal</th><td><b>None</b></td><td class="on"><b>441</b>A few lines that give nothing away</td><td><b>705</b>Other rolls, other ways in, what it costs</td></tr>
+        <tr><th scope="row">The idea</th><td>Never lose a thing by accident</td><td>Steered, not spoiled</td><td>The numbers, and more on request</td></tr>
+        <tr><th scope="row">Notes on the ground</th><td><b>150</b>Only what could slip away</td><td><b>1,087</b>What to do, and what could slip away</td><td><b>1,087</b>Also rolls, party advice, loot and tips</td></tr>
+        <tr><th scope="row">Dialogue tags</th><td class="none"><b>None</b></td><td><b>1,496</b>A mark. No words.</td><td><b>1,496</b>A mark, and what follows your click</td></tr>
+        <tr><th scope="row">Quest lines</th><td><b>215</b>How urgent. Nothing more.</td><td><b>831</b>A short nudge</td><td><b>833</b>Full advice, deadlines named</td></tr>
+        <tr><th scope="row">Item tooltips</th><td class="none"><b>None</b></td><td><b>257</b>Who it suits</td><td><b>311</b>Who it suits, and why</td></tr>
+        <tr><th scope="row">Map pins</th><td class="none"><b>None</b></td><td><b>208</b>Loot and secrets</td><td><b>358</b>Story steps as well</td></tr>
+        <tr><th scope="row">Treasure glints</th><td class="none"><b>None</b></td><td><b>102</b></td><td><b>102</b></td></tr>
+        <tr><th scope="row">Points of no return</th><td><b>7</b>Names your open quests</td><td><b>7</b>Names your open quests</td><td><b>7</b>Says what you stand to lose</td></tr>
+        <tr><th scope="row">Camp warnings</th><td><b>16</b>No outcome given</td><td><b>16</b>No outcome given</td><td><b>16</b>Says what will happen</td></tr>
+        <tr><th scope="row">More in the journal</th><td class="none"><b>None</b></td><td><b>454</b>A few lines that give nothing away</td><td><b>721</b>Other rolls, other ways in, what it costs</td></tr>
       </tbody>
     </table>
   </div>
-</section>
-
-<section>
-  <h2>Which one to pick</h2>
-  <div class="split">
-    <div>
-      <p><b>Normal</b> suits a first run. It tells you where to go and warns you of what could be lost. It never says why. In conversation you see a star or a red mark, and what the line leads to is yours to find out.</p>
-      <p><b>Minimal</b> is for those who fear one thing: missing something for good. Most days, you won't know it's there.</p>
-      <p><b>Extensive</b> is for a second run, or for those who want the numbers. A short note names the rolls and the loot. Your journal keeps the rest. Expect spoilers.</p>
-    </div>
-    <div>
-      <h3>Even Extensive holds its tongue</h3>
-      <p>A dialogue tag only says what happens right after you click. If the price comes due much later, it says 'There will be a price, later' or 'This will repay you, in time', and nothing else. 145 lines keep their secrets this way.</p>
-    </div>
+  <div class="note tongue">
+    <h3>Even Extensive holds its tongue</h3>
+    <p>A dialogue tag only says what happens right after you click. If the price comes due much later, it says 'There will be a price, later' or 'This will repay you, in time', and nothing else. 145 lines keep their secrets this way.</p>
   </div>
 </section>
 
 <section>
   <h2>The same spot at each tier</h2>
-  [[shot compare-notes | The Waukeen's Rest note at each tier. Minimal has one line, Normal has two, and Extensive has two with the next note below. | A note in Act 1. Minimal says what to finish. Extensive names the waypoint and the fire's price. An earlier cut of the wording.]]
-  <div class="split flip">
-    <div>[[shot compare-tooltips | The Thieves' Tools tooltip at Normal and Extensive. Normal only names Astarion. Extensive adds a sentence about why. | Tooltips. A name, or a name and a reason.]]</div>
-    <div>[[shot compare-map-pins | The same Act 1 map at Normal and Extensive. Extensive has more pins along the top edge. | Map pins. Extensive marks the story's path as well.]]</div>
+  <figure class="set">
+    [[row 3]]
+    [[shot note-minimal | The Waukeen's Rest note at Minimal, with one line | Minimal]]
+    [[shot note-normal | The same note at Normal, with two lines and a footer | Normal]]
+    [[shot note-extensive | The same note at Extensive, with two longer lines and a footer | Extensive]]
+    [[/row]]
+    <figcaption>A note in Act 1. Minimal says what to finish. Extensive names the waypoint and the fire's price. An earlier cut of the wording.</figcaption>
+  </figure>
+  <div class="split even">
+    <figure class="set">
+      [[row 2s]]
+      [[shot tooltip-normal | The Thieves' Tools tooltip at Normal. It only names Astarion. | Normal]]
+      [[shot tooltip-extensive | The Thieves' Tools tooltip at Extensive, with a sentence about why | Extensive]]
+      [[/row]]
+      <figcaption>Tooltips. A name, or a name and a reason.</figcaption>
+    </figure>
+    <figure class="set">
+      [[wipe Slide between Normal and Extensive]]
+      [[shot map-top-normal | The top of an Act 1 map at Normal | Normal]]
+      [[shot map-top-extensive | The same stretch of map at Extensive, with more pins along the top edge | Extensive]]
+      [[/wipe]]
+      <figcaption>Map pins. Extensive marks the story's path as well.</figcaption>
+    </figure>
   </div>
-  [[gate Act 3 conversation | compare-dialogue | Danthelon's greeting at each tier. Minimal has no tag, Normal has a star, and Extensive adds what the line does. | Dialogue. Nothing, then a mark, then a mark with words.]]
-  [[gate early Dark Urge story | compare-quest-lines | The Urge quest at each tier. Minimal only says Time-limited. | Quest lines. Minimal only says how urgent a step is.]]
+  <details class="gate">
+    [[summary Act 3 conversation | Show dialogue tags at each tier]]
+    <div class="gate-body">
+    [[shot compare-dialogue | Danthelon's greeting at each tier. Minimal has no tag, Normal has a star, and Extensive adds what the line does. | Dialogue. Nothing, then a mark, then a mark with words. | pan:900]]
+    </div>
+  </details>
+  <details class="gate">
+    [[summary early Dark Urge story | Show quest lines at each tier]]
+    <div class="gate-body">
+    [[shot compare-quest-lines | The Urge quest at each tier. Minimal only says Time-limited. | Quest lines. Minimal only says how urgent a step is. | pan:1800]]
+    </div>
+  </details>
+  <div class="go last">
+    <a class="btn" href="compatibility.html">See what's been tested</a>
+    <a class="more" href="in-game.html">See it in the game</a>
+    <p class="status">There is no public download yet. Only the native Linux build has been tested.</p>
+  </div>
 </section>

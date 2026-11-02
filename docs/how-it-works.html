@@ -1,31 +1,42 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>How it works: Durge Guide</title>
 <meta name="description" content="How Durge Guide adds to Baldur&#x27;s Gate 3 without Script Extender, for modders.">
+<meta name="theme-color" content="#0b0506">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Durge Guide">
 <meta property="og:title" content="How it works: Durge Guide">
 <meta property="og:description" content="How Durge Guide adds to Baldur&#x27;s Gate 3 without Script Extender, for modders.">
-<meta property="og:image" content="img/hero-normal.jpg">
+<meta property="og:url" content="https://aeroith.github.io/durge-guide-site/how-it-works.html">
+<meta property="og:image" content="https://aeroith.github.io/durge-guide-site/img/hero-normal.jpg">
+<meta property="og:image:width" content="1880">
+<meta property="og:image:height" content="1058">
+<meta property="og:image:alt" content="A short note in the game's side popup at Waukeen's Rest">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://aeroith.github.io/durge-guide-site/how-it-works.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23b3202e' d='M12 2c4 6 7 9.500 7 13a7 7 0 0 1-14 0c0-3.500 3-7 7-13z'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@500;700&family=Grenze:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="preload" href="fonts/grenze.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/grenze-gotisch.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="print.css" media="print">
+<script src="site.js" defer></script>
 </head>
-<body>
+<body class="on-docs">
 <a class="skip" href="#main">Skip to content</a>
 <header class="top">
   <a class="mark" href="index.html">Durge Guide</a>
   <nav aria-label="Main"><a href="tiers.html">Tiers</a><a href="in-game.html">In the game</a><a href="screenshots.html">Screenshots</a><a href="install.html" aria-current=page>Docs</a></nav>
 </header>
 <main id="main">
-<div class="docs"><nav class="docs-nav" aria-label="Docs"><a href="install.html">Install</a><a href="using.html">Using it</a><a href="compatibility.html">Compatibility</a><a href="how-it-works.html" aria-current=page>How it works</a><a href="faq.html">FAQ</a><a href="credits.html">Credits</a></nav><article class="prose">
+<div class="docs"><nav class="docs-nav strip" aria-label="Docs"><a href="install.html">Install</a><a href="using.html">Using it</a><a href="compatibility.html">Compatibility</a><a href="how-it-works.html" aria-current=page>How it works</a><a href="faq.html">FAQ</a><a href="credits.html">Credits</a></nav><article class="prose">
 <h1>How it works</h1>
 <p>For modders. It is an Osiris story goal and data files, nothing more. No Script Extender is needed, and it runs on the native Linux build.</p>
 
-<h2>Popups and notices</h2>
+<h2 id="popups-and-notices">Popups and notices</h2>
 <p>An existing save never gains a mod's new level objects, so a trigger placed in a level will never fire. A timer does the watching instead. Once a second, it checks the host's position against a 16-metre grid of spots. The notes themselves are <code>UnifiedTutorial</code> entries with the side-popup modal type, so the journal keeps them without being asked.</p>
 <ul>
   <li>Two side popups fit on screen. Call a third, and the game drops it but still counts it as seen. Popups are spaced 6 seconds apart for that reason.</li>
@@ -34,28 +45,29 @@
   <li><code>KeyboardInputList</code> and <code>ControllerInputList</code> on an entry draw a footer, and <code>[IE_ToggleJournal]</code> draws the bound key. That footer is the note's 'more' button. A clickable one would need Script Extender.</li>
 </ul>
 
-<h2>Text in the game's own screens</h2>
+<h2 id="text-in-the-game-s-own-screens">Text in the game's own screens</h2>
 <p>A mod's localization file with the same handle does not override the game's text. A full copy of <code>english.loca</code> inside the mod's pak does. The build extracts the current file from the installed game, adds its lines to quest steps, dialogue options and item descriptions, and packs it all back up. This is also why a tier has to be chosen at build time.</p>
 
-<h2>Map pins</h2>
+<h2 id="map-pins">Map pins</h2>
 <p>A journal marker needs an existing object, so each one snaps to a vanilla object nearby. Markers stay hidden until <code>ShowMapMarker</code> is called, and the shown state is saved, so a timer shows only those within 160 metres. Pins clear on <code>TemplateAddedTo</code> or <code>Opened</code>.</p>
 <p>A marker in the final level (<code>END_Main</code>) makes older saves fail to load, so it has none. The Iron Throne level is left out to be safe.</p>
 
-<h2>Saves and rebuilds</h2>
+<h2 id="saves-and-rebuilds">Saves and rebuilds</h2>
 <p>A save keeps the goal it was saved with until the mod's <code>Version64</code> changes. Every build stamps a new version. The goal file is renamed each build too, so its <code>INITSECTION</code> runs again.</p>
 
-<h2>Warnings</h2>
+<h2 id="warnings">Warnings</h2>
 <p>Points of no return use the same position check, with <code>QuestIsAccepted</code> and <code>QuestIsClosed</code> to list what's still open. Camp warnings hang off <code>TeleportedToCamp</code> and check quest steps with <code>QuestUpdateIsUnlocked</code>. The game offers no event that lets a mod step in before a rest. A warning on arrival at camp is as close as it gets.</p>
 
-<h2>Dialogue tags</h2>
+<h2 id="dialogue-tags">Dialogue tags</h2>
 <p>Once unpacked, the game's dialogue files are readable JSON, complete with the writers' own notes on what each line does. Tags were matched to exact line handles using those files.</p>
 
-<h2>The voice</h2>
-<p>All of the mod's text was rewritten to match the game's narrator, measured from 6,850 of its lines. The notes then had a second pass, merging the guides' facts in the mod's own words. The narrator's 4,289 lines in the dialogue files run to a median of 17 words and never pass 40. A note's popup now has a median of 23 and a limit of 36. Whatever earns more goes in the journal, and 439 notes have nothing to add.</p>
+<h2 id="the-voice">The voice</h2>
+<p>All of the mod's text was rewritten to match the game's narrator, measured from 6,850 of its lines. The notes then had a second pass, merging the guides' facts in the mod's own words. The narrator's 4,289 lines in the dialogue files run to a median of 17 words and never pass 40. A note's popup now has a median of 23 and a limit of 36. Whatever earns more goes in the journal, and 366 notes have nothing to add.</p>
 <p>A dungeon master's habits shaped the rest: say what matters now, name the danger before it lands, then leave the choice alone. A checker fails a note that adds a number or a name without recording where it came from, or that moves a warning out of the popup, so the advice can't quietly change.</p>
-</article></div>
+<nav class="pager" aria-label="Previous and next"><a class="prev" href="compatibility.html" rel="prev">Compatibility</a><a class="next" href="faq.html" rel="next">FAQ</a></nav></article><nav class="toc" aria-label="On this page"><p>On this page</p><a href="#popups-and-notices">Popups and notices</a><a href="#text-in-the-game-s-own-screens">Text in the game's own screens</a><a href="#map-pins">Map pins</a><a href="#saves-and-rebuilds">Saves and rebuilds</a><a href="#warnings">Warnings</a><a href="#dialogue-tags">Dialogue tags</a><a href="#the-voice">The voice</a></nav></div>
 </main>
 <footer class="foot">
+  <nav aria-label="Footer"><a href="tiers.html">Tiers</a><a href="in-game.html">In the game</a><a href="screenshots.html">Screenshots</a><a href="install.html">Docs</a></nav>
   <p>Unofficial fan project, not affiliated with Larian Studios. Baldur's Gate 3 and its screenshots are &copy; Larian Studios. <a href="credits.html">Credits and licences</a>.</p>
 </footer>
 </body>

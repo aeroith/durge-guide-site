@@ -1,0 +1,3 @@
+/* Paper: black on white, without the frame. Install steps are the likely thing to print. */
+:root { --ink: #fff; --night: #fff; --wine: #fff; --wine-deep: #fff; --wine-lift: #fff; --bone: #000; --ash: #222; --gold: #000; --gold-hi: #000; --gold-mid: #555; --gold-low: #999; --hair: #ccc; --blood-glow: transparent; --panel: #fff; --banner: #fff; --plaque: #fff; --tab-on: #fff; }
+body::before, .top nav, .strip, .toc, .pager, .skip, .stage::after, .gate .show { display: none; }

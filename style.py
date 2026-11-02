@@ -8,7 +8,7 @@ PLAIN = {"how-it-works", "credits"}  # these pages are allowed to run long, see 
 
 
 def sentences(page):
-    body = re.sub(r"<!--.*?-->|\[\[(?:shot|gate) [^|]*\|[^|]*\|?|<pre>.*?</pre>|<code>.*?</code>", " ", page, flags=re.S)
+    body = re.sub(r"<!--.*?-->|\[\[(?:shot|split|gate) [^|]*\|[^|]*\|?|\[\[art [^|]*\|[^|]*\|[^|]*\|?|\[\[icon [^\]]*\]\]|<pre>.*?</pre>|<code>.*?</code>", " ", page, flags=re.S)
     text = re.findall(r"<(p|li|h3)(?: [^>]*)?>(.*?)</\1>", body, flags=re.S)
     return [s for _, t in text for s in re.split(r"(?<=[.!?'])\s+", html.unescape(re.sub(r"<[^>]+>", "", t)).strip()) if len(s.split()) > 1]
 

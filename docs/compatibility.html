@@ -1,51 +1,63 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Compatibility: Durge Guide</title>
 <meta name="description" content="What Durge Guide has been tested on, and its known limits.">
+<meta name="theme-color" content="#0b0506">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Durge Guide">
 <meta property="og:title" content="Compatibility: Durge Guide">
 <meta property="og:description" content="What Durge Guide has been tested on, and its known limits.">
-<meta property="og:image" content="img/hero-normal.jpg">
+<meta property="og:url" content="https://aeroith.github.io/durge-guide-site/compatibility.html">
+<meta property="og:image" content="https://aeroith.github.io/durge-guide-site/img/hero-normal.jpg">
+<meta property="og:image:width" content="1880">
+<meta property="og:image:height" content="1058">
+<meta property="og:image:alt" content="A short note in the game's side popup at Waukeen's Rest">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://aeroith.github.io/durge-guide-site/compatibility.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23b3202e' d='M12 2c4 6 7 9.500 7 13a7 7 0 0 1-14 0c0-3.500 3-7 7-13z'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@500;700&family=Grenze:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="preload" href="fonts/grenze.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/grenze-gotisch.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="print.css" media="print">
+<script src="site.js" defer></script>
 </head>
-<body>
+<body class="on-docs">
 <a class="skip" href="#main">Skip to content</a>
 <header class="top">
   <a class="mark" href="index.html">Durge Guide</a>
   <nav aria-label="Main"><a href="tiers.html">Tiers</a><a href="in-game.html">In the game</a><a href="screenshots.html">Screenshots</a><a href="install.html" aria-current=page>Docs</a></nav>
 </header>
 <main id="main">
-<div class="docs"><nav class="docs-nav" aria-label="Docs"><a href="install.html">Install</a><a href="using.html">Using it</a><a href="compatibility.html" aria-current=page>Compatibility</a><a href="how-it-works.html">How it works</a><a href="faq.html">FAQ</a><a href="credits.html">Credits</a></nav><article class="prose">
+<div class="docs"><nav class="docs-nav strip" aria-label="Docs"><a href="install.html">Install</a><a href="using.html">Using it</a><a href="compatibility.html" aria-current=page>Compatibility</a><a href="how-it-works.html">How it works</a><a href="faq.html">FAQ</a><a href="credits.html">Credits</a></nav><article class="prose">
 <h1>Compatibility</h1>
 <p>Tested on game version 4.1.1.7631656, on the native Linux build, alongside more than 40 other mods. Beyond that, the road is unlit.</p>
 
-<h2>What's been tested</h2>
+<h2 id="what-s-been-tested">What's been tested</h2>
+<p class="mark-key"><i class="y"></i><span>Works</span><i class="p"></i><span>In part</span><i></i><span>Not seen or tested</span></p>
 <div class="table">
-  <table>
+  <table class="stack">
     <thead><tr><th scope="col">Check</th><th scope="col">Result</th></tr></thead>
     <tbody>
-      <tr><th scope="row">All three tiers on a real Act 1 save</th><td>Loads with 0 story errors</td></tr>
-      <tr><th scope="row">A real Act 2 save</th><td>Loads at Normal and Extensive. Not tried at Minimal.</td></tr>
-      <tr><th scope="row">The current notes</th><td>Normal and Extensive load with 0 story errors. A handful of notes seen in game. The rest checked as text only. Minimal does not use them.</td></tr>
-      <tr><th scope="row">Saves made before installing a lighter tier</th><td>Load fine</td></tr>
-      <tr><th scope="row">Act 3: Wyrm's Crossing, Lower City, High Hall</th><td>Seen through a test jump with a level 2 party, 0 story errors. No real save has reached Act 3.</td></tr>
-      <tr><th scope="row">Iron Throne</th><td>Not seen</td></tr>
-      <tr><th scope="row">Mouse and keyboard</th><td>Works</td></tr>
-      <tr><th scope="row">Controller</th><td>Works on a virtual Xbox pad. Not tried on a physical one.</td></tr>
-      <tr><th scope="row">Tags about later effects</th><td>Seen on a test line, not in a real scene yet</td></tr>
-      <tr><th scope="row">Windows and Steam Deck</th><td>Not tested</td></tr>
-      <tr><th scope="row">Multiplayer</th><td>Not tested. The mod follows the host's character.</td></tr>
+      <tr><th scope="row">All three tiers on a real Act 1 save</th><td class="yes">Loads with 0 story errors</td></tr>
+      <tr><th scope="row">A real Act 2 save</th><td class="part">Loads at Normal and Extensive. Not tried at Minimal.</td></tr>
+      <tr><th scope="row">The current notes</th><td class="part">An earlier cut loads at Normal and Extensive with 0 story errors. The newest corrections haven't been loaded in the game yet. A handful of notes seen in game. The rest checked as text only.</td></tr>
+      <tr><th scope="row">Saves made before installing a lighter tier</th><td class="yes">Load fine</td></tr>
+      <tr><th scope="row">Act 3: Wyrm's Crossing, Lower City, High Hall</th><td class="part">Seen through a test jump with a level 2 party, 0 story errors. No real save has reached Act 3.</td></tr>
+      <tr><th scope="row">Iron Throne</th><td class="no">Not seen</td></tr>
+      <tr><th scope="row">Mouse and keyboard</th><td class="yes">Works</td></tr>
+      <tr><th scope="row">Controller</th><td class="part">Works on a virtual Xbox pad. Not tried on a physical one.</td></tr>
+      <tr><th scope="row">Tags about later effects</th><td class="part">Seen on a test line, not in a real scene yet</td></tr>
+      <tr><th scope="row">Windows and Steam Deck</th><td class="no">Not tested</td></tr>
+      <tr><th scope="row">Multiplayer</th><td class="no">Not tested. The mod follows the host's character.</td></tr>
     </tbody>
   </table>
 </div>
 
-<h2>Known limits</h2>
+<h2 id="known-limits">Known limits</h2>
 <ul>
   <li><b>English only.</b> The mod edits the English text file.</li>
   <li><b>Other mods that replace the English text file</b> will conflict. Whichever loads last wins.</li>
@@ -56,17 +68,18 @@
   <li><b>Notices are short.</b> The game only keeps them up for a couple of seconds, so camp warnings show twice.</li>
 </ul>
 
-<h2>How safe the wording is</h2>
+<h2 id="how-safe-the-wording-is">How safe the wording is</h2>
 <p>The spoiler-free text at Minimal and Normal was rewritten line by line to a set of rules. No person has read all of it. A few lines are close calls - some next steps can't be named without a hint of what follows. Expect the odd slip.</p>
 
-<h2>How sure the facts are</h2>
-<p>Facts come from the game's files where those can be read, and from guides where they can't. Act 1's dialogue isn't among the files read so far, so its newer facts rest on guides alone. Where guides disagree, a note says 'may'.</p>
+<h2 id="how-sure-the-facts-are">How sure the facts are</h2>
+<p>Every note has been checked against at least one guide page, and 740 cite a guide besides bg3.wiki. Facts come from the game's files where those can be read, and from guides where they can't. Act 1's dialogue isn't among the files read so far, so its newer facts rest on guides alone. Many guide pages predate Patch 8, so a fact only one older guide reports says 'may'. So does anything guides disagree on. 66 questions remain that only playing can settle.</p>
 
-<h2>Item mods</h2>
+<h2 id="item-mods">Item mods</h2>
 <p>Tooltips and loot notes know about the item mods on the test machine, such as Fade's Equipment Distribution. Without those mods, some notes point to items you won't find.</p>
-</article></div>
+<nav class="pager" aria-label="Previous and next"><a class="prev" href="using.html" rel="prev">Using it</a><a class="next" href="how-it-works.html" rel="next">How it works</a></nav></article><nav class="toc" aria-label="On this page"><p>On this page</p><a href="#what-s-been-tested">What's been tested</a><a href="#known-limits">Known limits</a><a href="#how-safe-the-wording-is">How safe the wording is</a><a href="#how-sure-the-facts-are">How sure the facts are</a><a href="#item-mods">Item mods</a></nav></div>
 </main>
 <footer class="foot">
+  <nav aria-label="Footer"><a href="tiers.html">Tiers</a><a href="in-game.html">In the game</a><a href="screenshots.html">Screenshots</a><a href="install.html">Docs</a></nav>
   <p>Unofficial fan project, not affiliated with Larian Studios. Baldur's Gate 3 and its screenshots are &copy; Larian Studios. <a href="credits.html">Credits and licences</a>.</p>
 </footer>
 </body>

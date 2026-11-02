@@ -1,46 +1,57 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Using it: Durge Guide</title>
 <meta name="description" content="What the icons mean and when Durge Guide speaks up.">
+<meta name="theme-color" content="#0b0506">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Durge Guide">
 <meta property="og:title" content="Using it: Durge Guide">
 <meta property="og:description" content="What the icons mean and when Durge Guide speaks up.">
-<meta property="og:image" content="img/hero-normal.jpg">
+<meta property="og:url" content="https://aeroith.github.io/durge-guide-site/using.html">
+<meta property="og:image" content="https://aeroith.github.io/durge-guide-site/img/hero-normal.jpg">
+<meta property="og:image:width" content="1880">
+<meta property="og:image:height" content="1058">
+<meta property="og:image:alt" content="A short note in the game's side popup at Waukeen's Rest">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://aeroith.github.io/durge-guide-site/using.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23b3202e' d='M12 2c4 6 7 9.500 7 13a7 7 0 0 1-14 0c0-3.500 3-7 7-13z'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@500;700&family=Grenze:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="preload" href="fonts/grenze.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/grenze-gotisch.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="print.css" media="print">
+<script src="site.js" defer></script>
 </head>
-<body>
+<body class="on-docs">
 <a class="skip" href="#main">Skip to content</a>
 <header class="top">
   <a class="mark" href="index.html">Durge Guide</a>
   <nav aria-label="Main"><a href="tiers.html">Tiers</a><a href="in-game.html">In the game</a><a href="screenshots.html">Screenshots</a><a href="install.html" aria-current=page>Docs</a></nav>
 </header>
 <main id="main">
-<div class="docs"><nav class="docs-nav" aria-label="Docs"><a href="install.html">Install</a><a href="using.html" aria-current=page>Using it</a><a href="compatibility.html">Compatibility</a><a href="how-it-works.html">How it works</a><a href="faq.html">FAQ</a><a href="credits.html">Credits</a></nav><article class="prose">
+<div class="docs"><nav class="docs-nav strip" aria-label="Docs"><a href="install.html">Install</a><a href="using.html" aria-current=page>Using it</a><a href="compatibility.html">Compatibility</a><a href="how-it-works.html">How it works</a><a href="faq.html">FAQ</a><a href="credits.html">Credits</a></nav><article class="prose">
 <h1>Using it</h1>
 <p>There is nothing to open and nothing to learn. Play. Read what appears.</p>
 
-<h2>What the icons mean</h2>
+<h2 id="what-the-icons-mean">What the icons mean</h2>
 <div class="table">
-  <table>
+  <table class="key stack">
     <thead><tr><th scope="col">Icon</th><th scope="col">In a note or quest line</th><th scope="col">On a dialogue line</th></tr></thead>
     <tbody>
-      <tr><th scope="row">Arrow</th><td>What to do here</td><td></td></tr>
-      <tr><th scope="row">Red mark</th><td>Something you could miss</td><td>A line to avoid</td></tr>
-      <tr><th scope="row">Star</th><td>A tip, at Extensive. A hint in the journal, at Normal.</td><td>A good line</td></tr>
-      <tr><th scope="row">Skull</th><td>A Dark Urge moment, at Extensive</td><td>A Dark Urge choice, at Extensive. 'Resist:' or 'Take:' says which way the line leans.</td></tr>
-      <tr><th scope="row">Die</th><td>A roll and its difficulty, at Extensive</td><td></td></tr>
-      <tr><th scope="row">Party, chest</th><td>Party advice and loot, at Extensive</td><td></td></tr>
+      <tr><th scope="row"><img class="icon" src="img/icon-arrow.jpg" width="38" height="38" alt="" loading="lazy">Arrow</th><td data-label="In a note or quest line">What to do here</td><td></td></tr>
+      <tr><th scope="row"><img class="icon" src="img/icon-mark.jpg" width="36" height="36" alt="" loading="lazy">Red mark</th><td data-label="In a note or quest line">Something you could miss</td><td data-label="On a dialogue line">A line to avoid</td></tr>
+      <tr><th scope="row"><img class="icon" src="img/icon-star.jpg" width="38" height="38" alt="" loading="lazy">Star</th><td data-label="In a note or quest line">A tip, at Extensive. A hint in the journal, at Normal.</td><td data-label="On a dialogue line">A good line</td></tr>
+      <tr><th scope="row"><img class="icon" src="img/icon-skull.jpg" width="26" height="26" alt="" loading="lazy">Skull</th><td data-label="In a note or quest line">A Dark Urge moment, at Extensive</td><td data-label="On a dialogue line">A Dark Urge choice, at Extensive. 'Resist:' or 'Take:' says which way the line leans.</td></tr>
+      <tr><th scope="row"><img class="icon" src="img/icon-die.jpg" width="38" height="38" alt="" loading="lazy">Die</th><td data-label="In a note or quest line">A roll and its difficulty, at Extensive</td><td></td></tr>
+      <tr><th scope="row"><img class="icon" src="img/icon-party.jpg" width="32" height="32" alt="" loading="lazy"><img class="icon" src="img/icon-chest.jpg" width="32" height="32" alt="" loading="lazy">Party, chest</th><td data-label="In a note or quest line">Party advice and loot, at Extensive</td><td></td></tr>
     </tbody>
   </table>
 </div>
 
-<h2>When notes appear</h2>
+<h2 id="when-notes-appear">When notes appear</h2>
 <ul>
   <li>Each note shows once, when you first come near. Notes about a choice open sooner, about 14 metres out, because popups can't appear during a conversation.</li>
   <li>Nothing appears during a fight.</li>
@@ -49,7 +60,7 @@
   <li>Once all of a note's quests are closed, it falls silent.</li>
 </ul>
 
-<h2>Reading the journal</h2>
+<h2 id="reading-the-journal">Reading the journal</h2>
 <ul>
   <li>Open the journal's <b>Tutorials</b> tab. Every note you've reached is listed under Map.</li>
   <li>A note whose footer reads <b>There's more in your journal</b> says more there than it did on the ground. At Normal, that's a few hints that give nothing away. At Extensive, it's the other rolls, the other ways in and what it all costs.</li>
@@ -57,16 +68,17 @@
   <li>The tab's <b>Show All</b> box lists notes you haven't reached yet. At Extensive, that's a list of spoilers. You have been warned.</li>
 </ul>
 
-<h2>On a controller</h2>
+<h2 id="on-a-controller">On a controller</h2>
 <ul>
   <li>Press the D-pad to dismiss a note. Its footer shows the button.</li>
   <li>When there's more to read, the footer shows the way: the menu button, then the journal.</li>
   <li>Tags and quest lines are ordinary game text, so they show the same way.</li>
   <li>Select an item to see its tooltip.</li>
 </ul>
-</article></div>
+<nav class="pager" aria-label="Previous and next"><a class="prev" href="install.html" rel="prev">Install</a><a class="next" href="compatibility.html" rel="next">Compatibility</a></nav></article><nav class="toc" aria-label="On this page"><p>On this page</p><a href="#what-the-icons-mean">What the icons mean</a><a href="#when-notes-appear">When notes appear</a><a href="#reading-the-journal">Reading the journal</a><a href="#on-a-controller">On a controller</a></nav></div>
 </main>
 <footer class="foot">
+  <nav aria-label="Footer"><a href="tiers.html">Tiers</a><a href="in-game.html">In the game</a><a href="screenshots.html">Screenshots</a><a href="install.html">Docs</a></nav>
   <p>Unofficial fan project, not affiliated with Larian Studios. Baldur's Gate 3 and its screenshots are &copy; Larian Studios. <a href="credits.html">Credits and licences</a>.</p>
 </footer>
 </body>

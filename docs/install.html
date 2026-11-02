@@ -1,31 +1,42 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Install: Durge Guide</title>
 <meta name="description" content="How to install Durge Guide, choose a tier and keep it working after a game patch.">
+<meta name="theme-color" content="#0b0506">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Durge Guide">
 <meta property="og:title" content="Install: Durge Guide">
 <meta property="og:description" content="How to install Durge Guide, choose a tier and keep it working after a game patch.">
-<meta property="og:image" content="img/hero-normal.jpg">
+<meta property="og:url" content="https://aeroith.github.io/durge-guide-site/install.html">
+<meta property="og:image" content="https://aeroith.github.io/durge-guide-site/img/hero-normal.jpg">
+<meta property="og:image:width" content="1880">
+<meta property="og:image:height" content="1058">
+<meta property="og:image:alt" content="A short note in the game's side popup at Waukeen's Rest">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://aeroith.github.io/durge-guide-site/install.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23b3202e' d='M12 2c4 6 7 9.500 7 13a7 7 0 0 1-14 0c0-3.500 3-7 7-13z'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@500;700&family=Grenze:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="preload" href="fonts/grenze.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/grenze-gotisch.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="print.css" media="print">
+<script src="site.js" defer></script>
 </head>
-<body>
+<body class="on-docs">
 <a class="skip" href="#main">Skip to content</a>
 <header class="top">
   <a class="mark" href="index.html">Durge Guide</a>
   <nav aria-label="Main"><a href="tiers.html">Tiers</a><a href="in-game.html">In the game</a><a href="screenshots.html">Screenshots</a><a href="install.html" aria-current=page>Docs</a></nav>
 </header>
 <main id="main">
-<div class="docs"><nav class="docs-nav" aria-label="Docs"><a href="install.html" aria-current=page>Install</a><a href="using.html">Using it</a><a href="compatibility.html">Compatibility</a><a href="how-it-works.html">How it works</a><a href="faq.html">FAQ</a><a href="credits.html">Credits</a></nav><article class="prose">
+<div class="docs"><nav class="docs-nav strip" aria-label="Docs"><a href="install.html" aria-current=page>Install</a><a href="using.html">Using it</a><a href="compatibility.html">Compatibility</a><a href="how-it-works.html">How it works</a><a href="faq.html">FAQ</a><a href="credits.html">Credits</a></nav><article class="prose">
 <h1>Install</h1>
 <p class="note">There is no public download yet. These are the steps used on the test machine. They'll carry over to a release.</p>
 
-<h2>What you need</h2>
+<h2 id="what-you-need">What you need</h2>
 <ul>
   <li>Baldur's Gate 3. Only the native Linux build has been tested. See <a href="compatibility.html">Compatibility</a> for Windows.</li>
   <li>The game set to English. In any other language, the quest, dialogue and item text stays silent.</li>
@@ -33,7 +44,7 @@
   <li>No Script Extender. It isn't needed.</li>
 </ul>
 
-<h2>Install it</h2>
+<h2 id="install-it">Install it</h2>
 <ol>
   <li>Close the game.</li>
   <li>Put <code>DurgeGuide.pak</code> in the game's <code>Mods</code> folder. On Linux that's <code>~/.local/share/Larian Studios/Baldur's Gate 3/Mods/</code>.</li>
@@ -43,19 +54,20 @@
 </ol>
 <p>Existing saves work. There is no need to start again.</p>
 
-<h2>Change tier</h2>
+<h2 id="change-tier">Change tier</h2>
 <p>With the game closed, run this from the mod's folder, naming <code>minimal</code>, <code>normal</code> or <code>extensive</code>:</p>
 <pre><code>./tier.sh extensive</code></pre>
 <p>It rebuilds and installs the mod. Mod Verification returns on the next load. Notes you've seen stay seen, though the journal will read differently.</p>
 
-<h2>After a game patch</h2>
+<h2 id="after-a-game-patch">After a game patch</h2>
 <p>The mod carries its own edited copy of the game's English text. A patch leaves that copy behind until you rebuild, so run <code>tier.sh</code> again. On Linux, the included systemd unit notices the change and rebuilds for you. It remembers your tier.</p>
 
-<h2>Remove it</h2>
+<h2 id="remove-it">Remove it</h2>
 <p>Removing it in the middle of a run hasn't been tested. Keep a save from before you installed it.</p>
-</article></div>
+<nav class="pager" aria-label="Previous and next"><a class="next" href="using.html" rel="next">Using it</a></nav></article><nav class="toc" aria-label="On this page"><p>On this page</p><a href="#what-you-need">What you need</a><a href="#install-it">Install it</a><a href="#change-tier">Change tier</a><a href="#after-a-game-patch">After a game patch</a><a href="#remove-it">Remove it</a></nav></div>
 </main>
 <footer class="foot">
+  <nav aria-label="Footer"><a href="tiers.html">Tiers</a><a href="in-game.html">In the game</a><a href="screenshots.html">Screenshots</a><a href="install.html">Docs</a></nav>
   <p>Unofficial fan project, not affiliated with Larian Studios. Baldur's Gate 3 and its screenshots are &copy; Larian Studios. <a href="credits.html">Credits and licences</a>.</p>
 </footer>
 </body>
