@@ -10,18 +10,35 @@
     <tbody>
       <tr><th scope="row">All three tiers on a real Act 1 save</th><td class="yes">Loads with 0 story errors</td></tr>
       <tr><th scope="row">A real Act 2 save</th><td class="part">Loads at Normal and Extensive. Not tried at Minimal.</td></tr>
-      <tr><th scope="row">The current notes</th><td class="part">An earlier cut loads at Normal and Extensive with 0 story errors. The newest corrections haven't been loaded in the game yet. A handful of notes seen in game. The rest checked as text only.</td></tr>
+      <tr><th scope="row">The current notes</th><td class="part">Loaded at Normal and Extensive with 0 story errors. The game itself chose the version of every note on a real save, and the choice matched the rules every time. Most notes also fired on the spot, in a jump across every act.</td></tr>
       <tr><th scope="row">Saves made before installing a lighter tier</th><td class="yes">Load fine</td></tr>
       <tr><th scope="row">Act 3: Wyrm's Crossing, Lower City, High Hall</th><td class="part">Seen through a test jump with a level 2 party, 0 story errors. No real save has reached Act 3.</td></tr>
       <tr><th scope="row">Iron Throne</th><td class="no">Not seen</td></tr>
       <tr><th scope="row">Mouse and keyboard</th><td class="yes">Works</td></tr>
       <tr><th scope="row">Controller</th><td class="part">Works on a virtual Xbox pad. Not tried on a physical one.</td></tr>
       <tr><th scope="row">Tags about later effects</th><td class="part">Seen on a test line, not in a real scene yet</td></tr>
+      <tr><th scope="row">Removing the mod mid-run, Karlach as host</th><td class="no">Not tested on this build</td></tr>
       <tr><th scope="row">Windows and Steam Deck</th><td class="no">Not tested</td></tr>
       <tr><th scope="row">Multiplayer</th><td class="no">Not tested. The mod follows the host's character.</td></tr>
     </tbody>
   </table>
 </div>
+
+<h2>Performance</h2>
+<p>Measured on one machine and one Act 1 save: an RTX 4070 SUPER, the native build, every other mod still on. The earlier build of this mod is the comparison, before notes could read the party.</p>
+<div class="table">
+  <table class="stack">
+    <thead><tr><th scope="col">Measure</th><th scope="col">Earlier Normal</th><th scope="col">Normal</th><th scope="col">Earlier Extensive</th><th scope="col">Extensive</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Loading a save</th><td>15-16 s</td><td>14-16 s</td><td>15-16 s</td><td>16-17 s</td></tr>
+      <tr><th scope="row">The once-a-second check</th><td>0.12 ms</td><td>0.03 ms</td><td>0.17 ms</td><td>0.03-0.06 ms</td></tr>
+      <tr><th scope="row">Map pins, every 5 seconds</th><td>1.6 ms</td><td>1.1 ms</td><td>3.0 ms</td><td>1.9 ms</td></tr>
+      <tr><th scope="row">Quicksave</th><td>2.4 s</td><td>2.9 s</td><td>3.1 s</td><td>3.1 s</td></tr>
+      <tr><th scope="row">Save file</th><td>15.7 MB</td><td>15.8 MB</td><td>15.6 MB</td><td>16.1 MB</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>A note firing costs a little more, for asking about the party and choosing: about 0.5 ms at Normal and 3.5 ms at Extensive. The worst note takes 6 ms choosing. The first tick of Show All takes 0.8 s at Normal and 1.5 s at Extensive. A frame at this machine's speed is about 9.5 ms, and those checks don't run on the thread that draws it.</p>
 
 <h2>Known limits</h2>
 <ul>
@@ -31,14 +48,17 @@
   <li><b>Game patches</b> leave the text out of date until you rebuild. See <a href="install.html">Install</a>.</li>
   <li><b>The Upper City and the Iron Throne have no map pins.</b> A pin in the Upper City stopped saves from loading, and the Iron Throne is left out to be safe. Their notes and quest lines still work.</li>
   <li><b>Some scenes have no spot on the ground</b>, such as camp scenes, so they only appear in quest lines.</li>
-  <li><b>Notices are short.</b> The game only keeps them up for a couple of seconds, so camp warnings show twice.</li>
+  <li><b>Notices are short.</b> The game only keeps them up for a couple of seconds. Warnings use boxes you dismiss instead.</li>
+  <li><b>A second run stays quiet unless you say otherwise.</b> The game shows each tutorial once per profile. Choose Reset Tutorials when it offers.</li>
+  <li><b>Show All repeats itself.</b> The journal's Show All lists every version of a note that reads the party, under the same title. You only ever see one in play.</li>
+  <li><b>The ledger forgets.</b> It keeps the latest 100 notes at Normal and 50 at Extensive, because a bigger book takes far longer to open. The journal keeps them all.</li>
 </ul>
 
 <h2>How safe the wording is</h2>
 <p>The spoiler-free text at Minimal and Normal was rewritten line by line to a set of rules. No person has read all of it. A few lines are close calls - some next steps can't be named without a hint of what follows. Expect the odd slip.</p>
 
 <h2>How sure the facts are</h2>
-<p>Every note has been checked against at least one guide page, and 740 cite a guide besides bg3.wiki. Facts come from the game's files where those can be read. Act 1's dialogue was read from a public copy of those files from Patch 2, so its lines and DCs may have moved since. Many guide pages predate Patch 8 too, so a fact only one older guide reports says 'may'. So does anything guides disagree on. 84 questions remain that only playing can settle.</p>
+<p>Every note has been checked against at least one guide page, and 740 cite a guide besides bg3.wiki. Facts come from the files of Patch 8 where those can be read, dialogue included. Many guide pages are older, so a fact only one older guide reports says 'may'. So does anything guides disagree on. 29 questions remain that only playing can settle.</p>
 
 <h2>Item mods</h2>
 <p>Tooltips and loot notes know about the item mods on the test machine, such as Fade's Equipment Distribution. Without those mods, some notes point to items you won't find.</p>

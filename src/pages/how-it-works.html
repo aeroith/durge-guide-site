@@ -3,12 +3,35 @@
 <p>For modders. It is an Osiris story goal and data files, nothing more. No Script Extender is needed, and it runs on the native Linux build.</p>
 
 <h2>Popups and notices</h2>
-<p>An existing save never gains a mod's new level objects, so a trigger placed in a level will never fire. A timer does the watching instead. Once a second, it checks the host's position against a 16-metre grid of spots. The notes themselves are <code>UnifiedTutorial</code> entries with the side-popup modal type, so the journal keeps them without being asked.</p>
+<p>An existing save never gains a mod's new level objects, so a trigger placed in a level will never fire. A timer does the watching instead. Once a second, it checks the host's position against a 48-metre grid of spots. The notes themselves are <code>UnifiedTutorial</code> entries with the side-popup modal type, so the journal keeps them without being asked.</p>
 <ul>
   <li>Two side popups fit on screen. Call a third, and the game drops it but still counts it as seen. Popups are spaced 6 seconds apart for that reason.</li>
   <li>A popup raised under the loading screen is lost the same way. Nothing fires until the party has moved.</li>
   <li><code>ShowNotification</code> takes raw strings. That's all a one-line notice is.</li>
-  <li><code>KeyboardInputList</code> and <code>ControllerInputList</code> on an entry draw a footer, and <code>[IE_ToggleJournal]</code> draws the bound key. That footer is the note's 'more' button. A clickable one would need Script Extender.</li>
+  <li><code>KeyboardInputList</code> and <code>ControllerInputList</code> on an entry draw a footer, and <code>[IE_ToggleJournal]</code> draws the bound key. That footer is the note's 'more' button. It only points the way: it can't be clicked.</li>
+</ul>
+
+<h2>Notes that read the party</h2>
+<p>A tutorial's text can't be composed at run time, so every outcome of a note is its own tutorial. A small language in the note's text says what depends on what, and <code>notelang</code> expands each note into its versions. When a note fires, Osiris rules ask the game about the party once, then pick the version whose answers match.</p>
+<p>Quest lines, tags and tooltips are fixed text. They can't read anything, so they're settled at build time for the intended party.</p>
+<p>The rules are checked outside the game as well: the language in Lean, the order of events in TLA+, and the goal's real rules run against a Python game. Every one of those was then compared with the game itself, on real saves with three different parties.</p>
+
+<h2>A book, a choice and a roll</h2>
+<ul>
+  <li>The ledger is our own root template with a use action. <code>TemplateUseFinished</code> calls <code>OpenCustomBookUI</code>, and pages arrive through <code>AddEntryToCustomBook</code>. Its opening time grows faster than its size: 100 pages open in about a second, 900 in half a minute. Hence the limit.</li>
+  <li>The loose page is <code>OpenMessageBoxChoice</code>, and <code>MessageBoxChoiceClosed</code> gives the answer.</li>
+  <li>Glints call <code>RequestPassiveRoll</code> for each party member, with a roll name of our own. <code>RollResult</code> says who passed.</li>
+  <li>Narrator scenes are real dialogue files without a timeline, started by <code>QRY_StartDialog</code>. If one can't start, the popup says it instead.</li>
+</ul>
+
+<h2>Keeping it light</h2>
+<p>The game compiles the whole story on every load, so each row of a goal costs load time, between 0.15 and 0.35 ms by measurement. A mod's load time is mostly how many facts it declares, not how long its text is. So the tables share what they can.</p>
+<ul>
+  <li>A note's cases that differ only in a question that doesn't matter are merged.</li>
+  <li>What a case asks is a chain of answers, shared across every note that asks the same.</li>
+  <li>A version with the same notice or the neutral words as its note says nothing about it.</li>
+  <li>The spots sit on a 48-metre grid rather than 16, keyed so a lookup only reads its own cell.</li>
+  <li>The once-a-second check looks at the grid once. What's expensive to ask comes after what's cheap, and most rows never reach it.</li>
 </ul>
 
 <h2>Text in the game's own screens</h2>
@@ -22,7 +45,8 @@
 <p>A save keeps the goal it was saved with until the mod's <code>Version64</code> changes. Every build stamps a new version. The goal file is renamed each build too, so its <code>INITSECTION</code> runs again.</p>
 
 <h2>Warnings</h2>
-<p>Points of no return use the same position check, with <code>QuestIsAccepted</code> and <code>QuestIsClosed</code> to list what's still open. Camp warnings hang off <code>TeleportedToCamp</code> and check quest steps with <code>QuestUpdateIsUnlocked</code>. The game offers no event that lets a mod step in before a rest. A warning on arrival at camp is as close as it gets.</p>
+<p>Points of no return use the same position check, with <code>QuestIsAccepted</code> and <code>QuestIsClosed</code> to list what's still open. Camp warnings hang off <code>TeleportedToCamp</code> and check quest steps with <code>QuestUpdateIsUnlocked</code>. A warning on arrival at camp is as close as this mod gets to stepping in before a rest. <code>LongRestStarted</code> clears anything it hadn't said.</p>
+<p>Both are message boxes, and only ever whole strings from the goal. Close a box whose text <code>Concatenate</code> built, and the game crashes: 5 times out of 5, against 28 whole strings without trouble. So a box names its quest by being written out in full, one line for each.</p>
 
 <h2>Dialogue tags</h2>
 <p>Once unpacked, the game's dialogue files are readable JSON, complete with the writers' own notes on what each line does. Tags were matched to exact line handles using those files.</p>

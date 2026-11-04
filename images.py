@@ -15,23 +15,24 @@ SHOTS = {
     "a1-minimal-grymforge": "minimal-a1-grymforge-3", "a1-normal-grymforge": "normal-a1-grymforge-2", "a1-extensive-grymforge": "extensive-a1-grymforge-2",
     "a1-normal-glint": "normal-a1-buried-chest-2", "a1-extensive-sazza": "extensive-a1-hollow-sazza-1", "a1-extensive-buried-chest": "extensive-a1-buried-chest-2",
     "a1-normal-map": "normal-a1-map", "a1-extensive-map": "extensive-a1-map", "a1-normal-quest": "normal-a1-quest", "a1-extensive-quest": "extensive-a1-quest",
-    "a1-minimal-camp-warning": "minimal-a1-camp-warning",
+    "a1-minimal-camp-warning": "normal-a1-camp-warning",
     "a2-normal-quest": "normal-a2-quest", "a2-extensive-quest": "extensive-a2-quest", "a2-normal-map": "normal-a2-map", "a2-extensive-map": "extensive-a2-map",
-    "a3-minimal-note": "minimal-a3-koll-2", "a3-minimal-dialogue": "minimal-a3-dialogue-notag", "a3-minimal-quest": "minimal-a3-quest-urgency", "a3-normal-exit": "normal-a3-exit-3",
-    "a3-normal-note-shop": "normal-a3-danthelon-3", "a3-normal-note-pool": "normal-a3-dock-3", "a3-normal-note-last-shop": "normal-a3-koll-2",
-    "a3-extensive-box-controller": "extensive-a3-barn-controller-2", "a3-normal-notice-barn": "normal-a3-barn-controller-3",
-    "a3-extensive-notice-refugee": "extensive-a3-refugee-controller-2", "a3-normal-dialogue": "normal-a3-dialogue-controller", "a3-normal-tooltip": "normal-a3-tooltip-controller",
-    "a3-normal-journal": "normal-a3-journal-note",
-    "a1-normal-journal": "normal-a1-journal", "a1-extensive-journal": "extensive-a1-journal",
-    "a3-extensive-note-shop": "extensive-a3-danthelon-2", "a3-extensive-note-pool": "extensive-a3-dock-2", "a3-extensive-exit": "extensive-a3-exit",
-    "a3-extensive-dialogue": "extensive-a3-dialogue-controller-2", "a3-extensive-tooltip": "extensive-a3-tooltip-controller", "a3-extensive-journal": "extensive-a3-journal-note",
+    "a3-minimal-note": "minimal-a3-koll-2", "a3-minimal-dialogue": "minimal-a3-dialogue-controller", "a3-minimal-quest": "minimal-a1-quest", "a3-normal-exit": "normal-a3-voss-2",
+    "a3-normal-note-shop": "normal-a3-danthelon-3", "a3-normal-note-pool": "normal-a3-koll-2",
+    "a3-extensive-box-controller": "extensive-a3-barn-controller-2", 
+     "a3-normal-dialogue": "normal-a3-dialogue-controller", "a3-normal-tooltip": "normal-a3-tooltip-controller",
+    
+    
+    "narrator-scene": "normal-a1-waukeens-rest-3", "party-with": "party-with", "party-without": "party-without", "ledger-item": "new-ledger-item",
+    "a3-extensive-note-shop": "extensive-a3-danthelon-3", "a3-extensive-note-pool": "extensive-a3-dock-2", "a3-extensive-exit": "extensive-a3-exit-3",
+    "a3-extensive-dialogue": "extensive-a3-dialogue-controller", "a3-extensive-tooltip": "extensive-a3-tooltip-controller", "a3-extensive-journal": "extensive-a3-journal-note",
 }
 # slots cut from other slots, so a retake reproduces them: name -> (source slot, (left, top, right, bottom))
 CROPS = {
     # the popup at a size a phone can read, tall enough for Extensive's second note
     **{f"hero-note-{t}": (f"hero-{t}", (130, 86, 720, 906)) for t in ("minimal", "normal", "extensive")},
     # the tier comparisons without their baked-in labels, so each panel can stand alone at phone width
-    **{f"note-{t}": ("compare-notes", (16 + 646 * k, 60, 646 + 646 * k, 430)) for k, t in enumerate(("minimal", "normal", "extensive"))},
+    **{f"note-{t}": ("compare-notes", (16 + 646 * k, 60, 646 + 646 * k, 690)) for k, t in enumerate(("minimal", "normal", "extensive"))},
     **{f"tooltip-{t}": ("compare-tooltips", (16 + 536 * k, 60, 536 + 536 * k, 790)) for k, t in enumerate(("normal", "extensive"))},
     # the Normal archive note at a size a phone can read. Extensive's stays a full frame: its detail is a choice.
     "journal-note-normal": ("a1-normal-journal", (990, 205, 1610, 495)),
@@ -44,14 +45,6 @@ CROPS = {
     # where the two map tiers differ
     "map-top-normal": ("a1-normal-map", (420, 98, 1200, 628)),
     "map-top-extensive": ("a1-extensive-map", (420, 98, 1200, 628)),
-    # the mod's own icons, for the key in the docs
-    "icon-arrow": ("hero-extensive", (214, 176, 252, 214)),
-    "icon-mark": ("hero-extensive", (208, 271, 244, 307)),
-    "icon-star": ("hero-extensive", (212, 710, 250, 748)),
-    "icon-die": ("hero-extensive", (208, 618, 246, 656)),
-    "icon-skull": ("a1-extensive-welcome", (345, 258, 371, 284)),
-    "icon-party": ("a1-extensive-journal", (1020, 396, 1052, 428)),
-    "icon-chest": ("a1-extensive-journal", (1021, 674, 1053, 706)),
 }
 WIDTHS = (480, 800, 1280, 1920)  # build.py asks for the same sizes, and 1600 for the home page's scenes
 
@@ -66,9 +59,13 @@ def captures(src):
         Image.open(src / f"{old}.png").convert("RGB").resize((1920, 1080), Image.LANCZOS).save(out / f"{new}.jpg", quality=84, optimize=True, progressive=True)
     # the hero is cropped in, so the note can be read at page width
     for tier in ("minimal", "normal", "extensive"):
-        Image.open(src / f"{tier}-a1-waukeens-rest-3.png").convert("RGB").crop((0, 50, 1880, 1108)).save(out / f"hero-{tier}.jpg", quality=86, optimize=True, progressive=True)
+        Image.open(src / ({"minimal": "minimal-a1-waukeens-rest-3", "normal": "normal-a1-hollow-sazza-2", "extensive": "extensive-a1-hollow-sazza-2"}[tier] + ".png")).convert("RGB").crop((0, 50, 1880, 1108)).save(out / f"hero-{tier}.jpg", quality=86, optimize=True, progressive=True)
     for new in ("pin-before", "pin-after"):
-        Image.open(src / f"{new}.jpg").convert("RGB").save(out / f"{new}.jpg", quality=86, optimize=True)
+        if (src / f"{new}.jpg").exists():  # taken once, on a save nobody has now
+            Image.open(src / f"{new}.jpg").convert("RGB").save(out / f"{new}.jpg", quality=86, optimize=True)
+    # cropped, so nothing behind them shows the save's name
+    Image.open(src / "new-how-much.png").convert("RGB").crop((500, 400, 2060, 1040)).save(out / "how-much.jpg", quality=86, optimize=True, progressive=True)
+    Image.open(src / "ledger-open-old.jpg").convert("RGB").crop((205, 70, 815, 460)).save(out / "ledger-open.jpg", quality=88, optimize=True, progressive=True)
 
     font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Georgia Bold.ttf", 34)
 
@@ -89,11 +86,10 @@ def captures(src):
         o.save(out / f"compare-{name}.jpg", quality=88, optimize=True)
 
     T = ("Minimal", "Normal", "Extensive")
-    compare("notes", list(zip(T, ("minimal-a1-waukeens-rest-3", "normal-a1-waukeens-rest-3", "extensive-a1-waukeens-rest-3"))), (130, 130, 760, 760))
-    compare("notes-act3", list(zip(T, ("minimal-a3-koll-2", "normal-a3-koll-2", "extensive-a3-koll-2"))), (130, 130, 760, 660))
-    compare("quest-lines", list(zip(T, ("minimal-a3-quest-urgency", "normal-a1-quest", "extensive-a1-quest"))), (1240, 270, 2400, 760))
-    compare("dialogue", list(zip(T, ("minimal-a3-dialogue-notag", "normal-a3-dialogue-controller", "extensive-a3-dialogue-controller"))), (360, 960, 2240, 1400), stack=True)
-    compare("tooltips", list(zip(T[1:], ("normal-a3-tooltip-controller", "extensive-a3-tooltip-controller"))), (1710, 560, 2230, 1290))
+    compare("notes", list(zip(T, ("minimal-a3-danthelon-3", "normal-a3-danthelon-3", "extensive-a3-danthelon-3"))), (130, 130, 760, 760))
+    compare("quest-lines", list(zip(T, ("minimal-a1-quest", "normal-a1-quest", "extensive-a1-quest"))), (1240, 270, 2400, 760))
+    compare("dialogue", list(zip(T, ("minimal-a3-dialogue-controller", "normal-a3-dialogue-controller", "extensive-a3-dialogue-controller"))), (360, 960, 2240, 1400), stack=True)
+    compare("tooltips", list(zip(T[1:], ("normal-a3-tooltip-controller", "extensive-a3-tooltip-controller"))), (1790, 600, 2310, 1330))
     compare("map-pins", list(zip(T[1:], ("normal-a1-map", "extensive-a1-map"))), (500, 80, 2200, 1390))
     for p in (out / "t").glob("*.jpg"):  # new captures mean new thumbnails
         p.unlink()

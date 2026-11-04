@@ -1,17 +1,17 @@
-<!-- In the game | Every way Durge Guide appears in Baldur's Gate 3: notes, journal lines, dialogue tags, tooltips, map pins and warnings. | in-game -->
+<!-- In the game | Every way Durge Guide appears in Baldur's Gate 3: notes that read your party, a ledger, narrator scenes, dialogue tags, tooltips, map pins and warnings. | in-game -->
 <div class="page-head">
   <h1>In the game</h1>
-  <p>These are real captures. Anything from later in the story stays hidden until you ask for it. The party in the Act 3 shots is level 2, brought there by a test jump. It shows. A shot marked 'earlier cut' was taken just before the notes' last pass, so its wording is a little off. Select any shot to see it at full size.</p>
+  <p>These are real captures. Anything from later in the story stays hidden until you ask for it. The party in the Act 3 shots is level 2, brought there by a test jump. It shows. Select any shot to see it at full size.</p>
 </div>
 
 <nav class="strip tabs-sticky" aria-label="On this page" data-spy>
-  <a href="#notes">Notes</a><a href="#notices">Notices</a><a href="#glints">Glints</a><a href="#journal">Archive</a><a href="#quests">Quests</a><a href="#dialogue">Dialogue</a><a href="#items">Tooltips</a><a href="#map">Map pins</a><a href="#warnings">Warnings</a>
+  <a href="#notes">Notes</a><a href="#party">Your party</a><a href="#scenes">Scenes</a><a href="#ledger">Ledger</a><a href="#notices">Notices</a><a href="#glints">Glints</a><a href="#journal">Archive</a><a href="#quests">Quests</a><a href="#dialogue">Dialogue</a><a href="#items">Tooltips</a><a href="#map">Map pins</a><a href="#warnings">Warnings</a>
 </nav>
 
 <section id="notes">
   <h2>Where you stand</h2>
   <div class="split">
-    <div>[[art hero-normal | hero-note-normal | Waukeen's Rest with a short note at the top left, ending in There's more in your journal | Normal, in Act 1.]]</div>
+    <div>[[art hero-normal | hero-note-normal | Sazza's Cage with a short note at the top left, ending in There's more in your journal | Normal, in Act 1.]]</div>
     <div>
       <p>Walk near the right spot and the game's own side popup opens at the top left. Within ten seconds, it fades. On a controller, it offers a Dismiss button.</p>
       <p>A note says what matters now, in a line or two. If there's more, its footer says so: 'There's more in your journal'. Many notes have nothing more to say, and no footer.</p>
@@ -20,22 +20,68 @@
     </div>
   </div>
   [[row 2]]
-    [[art hero-minimal | hero-note-minimal | Waukeen's Rest with a one-line note | Minimal.]]
-    [[shot hero-extensive | Waukeen's Rest with two short notes at the top left, each with a footer | The same spot at Extensive. An earlier cut of the wording.]]
+    [[art hero-minimal | hero-note-minimal | Waukeen's Rest with a one-line note | Minimal, at Waukeen's Rest. It only speaks of what could be lost.]]
+    [[shot hero-extensive | Sazza's Cage with a note at the top left that names the rolls | Sazza's Cage at Extensive.]]
   [[/row]]
+</section>
+
+<section id="party">
+  <h2>It reads your party</h2>
+  <div class="split flip">
+    <div>
+      <p>A note looks at who stands with you before it speaks. Bring Astarion, and it names him. Leave him at camp, and it finds other words. Classes, skills, the gear in your packs and the dead are all counted.</p>
+      <p>It asks when the note fires, not before. Whoever is with you then is who it talks about. If nobody fits, it says less. Nothing here assumes the party you were told to bring.</p>
+    </div>
+    <div>
+      [[wipe Slide between with and without]]
+      [[shot party-with | A note that names Astarion | With Astarion.]]
+      [[shot party-without | The same note with other words | Without him.]]
+      [[/wipe]]
+    </div>
+  </div>
+</section>
+
+<section id="scenes">
+  <h2>A dozen doors</h2>
+  <div class="split">
+    <div>[[gate Act 1 and Act 2 places | narrator-scene | The game's own dialogue box with a narrator line and two answers, What do I need to know and I'll manage | Normal, at Waukeen's Rest.]]</div>
+    <div>
+      <p>Twelve places are worth stopping for. The song in the cove. The lift out of the dark. The road that only runs one way. Here the narrator takes the game's own dialogue box and asks what you want to know.</p>
+      <p>Ask, and it says the note. Say you'll manage, and it leaves you to it. Either way, the note waits in your journal. Nobody speaks aloud and the camera stays where it is. Minimal has no scenes.</p>
+    </div>
+  </div>
+</section>
+
+<section id="ledger">
+  <h2>A worn ledger</h2>
+  <div class="split flip">
+    <div>
+      <p>It sits in your pack from the start. Use it, and it opens like any book you find on a corpse. Its pages fill themselves as you go, in the order you were told.</p>
+      <p>It keeps your last 100 notes at Normal and your last 50 at Extensive, so it stays quick to open. The oldest pages go. The journal keeps everything.</p>
+    </div>
+    <div>[[gate Act 2 places | ledger-open | The ledger open at a page of notes | Normal, on an Act 2 save.]]</div>
+  </div>
+  <div class="split">
+    <div>[[split how-much | A box asking How much do you want to know, with the answers Little and Everything | The loose page.]]</div>
+    <div>
+      <h3>The loose page</h3>
+      <p>Tucked inside is a page with one line on it: 'How much do you want to know?'</p>
+      <p>Answer 'Little', and only what could be lost still speaks. The rest goes quietly to the journal and the ledger. Lesser pins and glints go dark with it. Answer 'Everything' and it all comes back. No rebuild and no reload. Minimal doesn't need one: there, every note is already about what could be lost.</p>
+    </div>
+  </div>
 </section>
 
 <section id="notices">
   <h2>One-line notices</h2>
   <p>Small finds get one line in the game's notice bubble. A couple of seconds, and it's gone. The full note waits in your journal. Notices queue behind the game's own banners, so none are lost. Minimal doesn't trouble you with small finds.</p>
-  [[gate Act 3 side quest | a3-normal-notice-barn | A barn with a one-line notice about what needs doing there | Normal, on a controller.]]
+  [[gate Act 3 side quest | a3-extensive-notice-refugee | A cliff with a one-line notice about a murdered refugee | Extensive, on a controller.]]
 </section>
 
 <section id="glints">
   <h2>Treasure glints</h2>
   <div class="split">
     <div>[[split a1-normal-glint | The Risen Road with a burst of white flecks beside a buried chest | White flecks above a buried chest.]]</div>
-    <div><p>A hidden treasure sparkles once, the first time you come within 12 metres. There is no box. There is nothing to dismiss. Minimal has no glints.</p></div>
+    <div><p>Come within 12 metres of a hidden treasure, and each of you rolls Perception, the game's own roll against DC 15. Pass, and it sparkles once. Fail, and it doesn't. You won't be asked again. There is no box and nothing to dismiss. Minimal has no glints.</p></div>
   </div>
 </section>
 
@@ -43,8 +89,8 @@
   <h2>The notes archive</h2>
   <p>Every note you've reached stays in the journal's Tutorials tab, along with the coordinates from your minimap. At Minimal, it keeps the words you saw on the ground. At Normal, some notes add a few lines that give nothing away. At Extensive, the detail follows, on the notes that earn it.</p>
   [[row 2]]
-    [[art a1-normal-journal | journal-note-normal | The Tutorials tab with a short note and three hints below it | Normal. An earlier cut of the wording.]]
-    [[shot a1-extensive-journal | The Tutorials tab with the same note, and the rolls, loot and risks below it | Extensive. An earlier cut of the wording.]]
+    [[art a1-normal-journal | journal-note-normal | The Tutorials tab with a short note and three hints below it | Normal.]]
+    [[shot a1-extensive-journal | The Tutorials tab with the same note, and the rolls, loot and risks below it | Extensive.]]
   [[/row]]
 </section>
 
@@ -101,17 +147,17 @@
 <section id="warnings">
   <h2>Warnings</h2>
   <div class="split">
-    <div>[[gate Act 3 place and quest | a3-normal-exit | A dock with a notice reading You may not be back, naming a quest that's still open | Normal, in Act 3.]]</div>
+    <div>[[gate Act 3 place and quest | a3-normal-exit | A dock with a box reading You may not be back, naming a quest that's still open, with the answers Next and Enough | Normal, in Act 3.]]</div>
     <div>
       <h3>Points of no return</h3>
-      <p>Near one of the 7 exits, each open quest you would lose comes up as a notice, one every few seconds. Minimal and Normal only name quests you've already accepted. What becomes of them, they don't say.</p>
+      <p>Near one of the 7 exits, each open quest you would lose comes up in a box. 'Next' shows the one after it. 'Enough' sends the rest away. Minimal and Normal only name quests you've already accepted. What becomes of them, they don't say.</p>
     </div>
   </div>
   <div class="split">
-    <div>[[gate Act 2 story | a1-minimal-camp-warning | Camp with a notice reading Rolan needs you now. Neither rest nor leave. | The wording is real. The trigger was forced for testing - Rolan belongs to Act 2.]]</div>
+    <div>[[gate Act 2 story | a1-minimal-camp-warning | Camp with a box reading Rolan needs you now. Neither rest nor leave. | The wording is real. The trigger was forced for testing - Rolan belongs to Act 2.]]</div>
     <div>
       <h3>Camp warnings</h3>
-      <p>Go to camp while a long rest would cost you someone, or a quest, and a warning waits for the arrival banner to pass. Then it speaks. Then it speaks again. There are 16 of these. Only Extensive says what would happen.</p>
+      <p>Go to camp while a long rest would cost you someone, or a quest, and a box waits for the arrival banner to pass. It stays until you close it. There are 16 of these. Only Extensive says what would happen. Begin the rest, and whatever it hadn't said yet goes unsaid.</p>
     </div>
   </div>
 </section>
